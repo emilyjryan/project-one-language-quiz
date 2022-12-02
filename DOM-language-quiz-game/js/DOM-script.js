@@ -1,12 +1,5 @@
 console.log('js is linked, yassss')
 
-// Canvas resolution: 
-canvas.setAttribute('height', getComputedStyle(canvas)['height'])
-canvas.setAttribute('width', getComputedStyle(canvas)['width'])
-
-const ctx = canvas.getContext('2d')
-
-
 // ====== ELEMENTS NEEDED ====== //
 
 // DEFINE CLASSES
@@ -46,7 +39,11 @@ console.log(spanish)
 // Game Class
 
 //Variables:
-const instructions = document.querySelector('#instructions')
+const instructionsBtn = document.querySelector('#instructions-btn')
+console.log(instructionsBtn)
+const playBtn = document.querySelector('#play-btn')
+console.log(playBtn)
+const main = document.querySelector('#main')
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
@@ -55,25 +52,24 @@ document.addEventListener("DOMContentLoaded", function() {
 // INSTRUCTIONS
 
 // Instructions button:
-instructions.addEventListener('click', () => {
+instructionsBtn.addEventListener('click', () => {
 
-    //instructions appear on 
-    ctx.fillStyle = 'white'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-    ctx.font = "20px Georgia"
-    ctx.strokeText("There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!", 20, 20, canvas.width - 40)
-    // ====== NEED TO FIGURE OUT TEXT WRAP ====== //
-
-})
+    //Instructions appear:
+    const instructions = document.createElement('p')
+    instructions.style.backgroundColor = 'white'
+    const instructionsText = document.createTextNode("There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!")
+    instructions.appendChild(instructionsText)
+    main.appendChild(instructions)
 
 })
 
-// INSTRUCTIONS
+// PLAY
 
-// click event for instructions button:
-
-// canvas displays instructions in new div:
-// ctx.fillText("There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!")
+//Play button:
+playBtn.addEventListener('click', () => {
+    main.style.backgroundImage = 'none'
+})
+})
 
 // PLAY
 

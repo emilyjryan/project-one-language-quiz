@@ -10,7 +10,7 @@ body {
     background-image: url('../images/490026.webp');
 }
 
-canvas {
+main {
     background-image: url('../images/languages-around-the-world-1024x710.png');
 
     background-size: contain;
@@ -32,14 +32,14 @@ canvas {
     width: 70%;
     grid-gap: 5px;
     grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: 1fr 6fr 1fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr 1fr;
     grid-template-areas: "top-left top-left top-right"
                          "main main main"
-                         "instructions mid-mid mid-right"
-                         "btm-left btm-left btm-right";
+                         "instructions-btn instructions-btn play-btn"
+                         "btm-left restart-btn btm-right";
 }
 
-#top-left, #top-right, #instructions, #mid-mid, #mid-right, #btm-left, #btm-right {
+#top-left, #top-right, #instructions-btn, #restart-btn, #play-btn, #btm-left, #btm-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,23 +59,23 @@ main {
     grid-area: top-right;
 }
 
-#mid-left {
-    grid-area: mid-left;
+#instructions-btn {
+    grid-area: instructions-btn;
 }
 
-#mid-mid {
-    grid-area: mid-mid;
+#play-btn {
+    grid-area: play-btn;
 }
 
-#mid-right {
-    grid-area: mid-right;
+#restart-btn {
+    grid-area: restart-btn;
+    display: none;
 }
 
 #btm-left {
     grid-area: btm-left;
     display: none;
 }
-
 
 #btm-right {
     grid-area: btm-right;
