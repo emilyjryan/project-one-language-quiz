@@ -36,8 +36,8 @@ class Phrase {
 french = new Phrase ("C'est la vie", "French", "This is the life")
 spanish = new Phrase ("Mi casa es su casa", "Spanish", "My house is your house")
 
-// console.log(french)
-// console.log(spanish)
+console.log(french)
+console.log(spanish)
 
 // french.render()
 
