@@ -13,15 +13,15 @@ class Phrase {
         this.phrase = phrase
         this.language = language
         this.translation = translation
-        console.log(this)
     }
 
     // methods:
     render() {
-        ctx.fillStyle = 'white'
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
-        ctx.strokeText(this.phrase, 0.4*canvas.width, 0.2*canvas.height, 100)
-
+        const phraseBox = document.createElement('p')
+        instructions.style.backgroundColor = 'purple'
+        const phraseText = document.createTextNode(this.phrase)
+        phraseBox.appendChild(phraseText)
+        main.appendChild(phraseBox)
 
     }
 }
@@ -55,12 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
 instructionsBtn.addEventListener('click', () => {
 
     //Instructions appear:
+    main.style.backgroundImage = 'none'
     const instructions = document.createElement('p')
-    instructions.style.backgroundColor = 'white'
+    instructions.style.backgroundColor = 'rgb(243, 243, 243)'
     const instructionsText = document.createTextNode("There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!")
     instructions.appendChild(instructionsText)
     main.appendChild(instructions)
-
+    instructions.style.fontSize = '22px'
+    instructions.style.textAlign = 'center'
 })
 
 // PLAY
