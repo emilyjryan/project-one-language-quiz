@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+}
+
+body {
+    background-image: url('../images/490026.webp');
+}
+
+canvas {
+    background-image: url('../images/languages-around-the-world-1024x710.png');
+
+    background-size: contain;
+    background-color: rgb(243, 243, 243);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border: rgb(219, 186, 110) solid 20px;
+
+}
+
+#container {
+    display: grid;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 40px;
+    height: 70%;
+    width: 70%;
+    grid-gap: 5px;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr 1fr;
+    grid-template-areas: "top-left top-left top-right"
+                         "main main main"
+                         "instructions mid-mid mid-right"
+                         "btm-left btm-left btm-right";
+}
+
+#top-left, #top-right, #instructions, #mid-mid, #mid-right, #btm-left, #btm-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(125, 199, 109);
+  }
+
+main {
+    grid-area: main;
+}
+
+#top-left {
+    grid-area: top-left;
+}
+
+
+#top-right {
+    grid-area: top-right;
+}
+
+#mid-left {
+    grid-area: mid-left;
+}
+
+#mid-mid {
+    grid-area: mid-mid;
+}
+
+#mid-right {
+    grid-area: mid-right;
+}
+
+#btm-left {
+    grid-area: btm-left;
+    display: none;
+}
+
+
+#btm-right {
+    grid-area: btm-right;
+    display: none;
+}
+
+button {
+    border-radius: 30px;
+}
