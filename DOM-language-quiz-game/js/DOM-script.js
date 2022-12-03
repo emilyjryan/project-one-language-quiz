@@ -1,24 +1,22 @@
 console.log('js is linked, yassss')
 
-// ====== ELEMENTS NEEDED ====== //
+// ===== DEFINE CLASSES ===== //
 
-// DEFINE CLASSES
-
-// Phrase Class
+// ~ Phrase Class ~ //
 
 class Phrase { 
 
-    // constructor:
+    // Constructor:
     constructor (phrase, language, translation) {
         this.phrase = phrase
         this.language = language
         this.translation = translation
     }
 
-    // methods:
+    // Methods:
     render() {
         const phraseBox = document.createElement('p')
-        instructions.style.backgroundColor = 'purple'
+        phraseBox.style.backgroundColor = 'purple'
         const phraseText = document.createTextNode(this.phrase)
         phraseBox.appendChild(phraseText)
         main.appendChild(phraseBox)
@@ -26,35 +24,30 @@ class Phrase {
     }
 }
 
-french = new Phrase ("C'est la vie", "French", "This is the life")
 spanish = new Phrase ("Mi casa es su casa", "Spanish", "My house is your house")
-
-console.log(french)
-console.log(spanish)
-
-// french.render()
-
-// render within method
+french = new Phrase ("C'est la vie", "French", "This is the life")
+turkish = new Phrase ()
 
 // Game Class
 
-//Variables:
+// ===== VARIABLES ===== //
 const instructionsBtn = document.querySelector('#instructions-btn')
-console.log(instructionsBtn)
 const playBtn = document.querySelector('#play-btn')
-console.log(playBtn)
+const welcomeBanner = document.querySelector('#welcome-banner')
+const welcomeWords = document.querySelector('#welcome-words')
 const main = document.querySelector('#main')
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
     console.log("main.js loaded")
 
-// INSTRUCTIONS
+// ===== INSTRUCTIONS ===== //
 
 // Instructions button:
 instructionsBtn.addEventListener('click', () => {
 
-    //Instructions appear:
+    // Instructions appear:
+    welcomeWords.innerText = 'Here is how to play:'
     main.style.backgroundImage = 'none'
     const instructions = document.createElement('p')
     instructions.style.backgroundColor = 'rgb(243, 243, 243)'
@@ -63,13 +56,17 @@ instructionsBtn.addEventListener('click', () => {
     main.appendChild(instructions)
     instructions.style.fontSize = '22px'
     instructions.style.textAlign = 'center'
+
+    // ========== STILL NEED TO FIX MULTIPLE INSTRUCTION CLICKS ========== //
 })
 
 // PLAY
 
 //Play button:
 playBtn.addEventListener('click', () => {
+    // somehow resets after instructions is clicked
     main.style.backgroundImage = 'none'
+
 })
 })
 

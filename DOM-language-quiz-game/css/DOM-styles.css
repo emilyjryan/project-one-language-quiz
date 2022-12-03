@@ -12,7 +12,6 @@ body {
 
 main {
     background-image: url('../images/languages-around-the-world-1024x710.png');
-
     background-size: contain;
     background-color: rgb(243, 243, 243);
     background-repeat: no-repeat;
@@ -33,13 +32,13 @@ main {
     grid-gap: 5px;
     grid-template-columns: 3fr 1fr 1fr;
     grid-template-rows: 1fr 8fr 1fr 1fr;
-    grid-template-areas: "top-left top-left top-right"
+    grid-template-areas: "welcome-banner welcome-banner top-right"
                          "main main main"
                          "instructions-btn instructions-btn play-btn"
                          "btm-left restart-btn btm-right";
 }
 
-#top-left, #top-right, #instructions-btn, #restart-btn, #play-btn, #btm-left, #btm-right {
+#welcome-banner, #top-right, #instructions-btn, #restart-btn, #play-btn, #btm-left, #btm-right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,8 +49,8 @@ main {
     grid-area: main;
 }
 
-#top-left {
-    grid-area: top-left;
+#welcome-banner {
+    grid-area: welcome-banner;
 }
 
 
@@ -61,10 +60,12 @@ main {
 
 #instructions-btn {
     grid-area: instructions-btn;
+    cursor: pointer;
 }
 
 #play-btn {
     grid-area: play-btn;
+    cursor: pointer;
 }
 
 #restart-btn {
