@@ -58,6 +58,10 @@ main {
     grid-area: score-banner;
 }
 
+#instructions-box {
+    display: none;
+}
+
 #instructions-btn {
     grid-area: instructions-btn;
 }
@@ -79,6 +83,14 @@ main {
 
 #submit-btn {
     grid-area: submit-btn;
+    display: none;
+}
+
+#play-boxes {
+    display: none
+}
+
+#result-text {
     display: none;
 }
 

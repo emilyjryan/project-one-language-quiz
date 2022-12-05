@@ -1,5 +1,26 @@
 console.log('js is linked, yassss')
 
+// ===== VARIABLES ===== //
+
+// Buttons:
+const instructionsBtn = document.querySelector('#instructions-btn')
+const playBtn = document.querySelector('#play-btn')
+const restartBtn = document.querySelector('#restart-btn')
+
+// Divs:
+const welcomeWords = document.querySelector('#welcome-words')
+const main = document.querySelector('#main')
+const score = document.querySelector('#score')
+
+// Play the game:
+const inputBox = document.querySelector('#input-box')
+const submitBtn = document.querySelector('#submit-btn')
+const playBoxes = document.querySelector('#play-boxes')
+const phraseText = document.querySelector('#phrase-text')
+const translationText = document.querySelector('#translation-text')
+const resultText = document.querySelector('#result-text')
+
+
 // ===== DEFINE CLASSES ===== //
 
 // ~ Phrase Class ~ //
@@ -17,38 +38,32 @@ class Phrase {
 
     // Methods:
     render() {
-        const phraseBox = document.createElement('p')
-        phraseBox.style.backgroundColor = 'lavender'
-        phraseBox.style.textAlign = 'center'
-        const phraseText = document.createTextNode(this.phrase)
-        const translationText = document.createTextNode(this.translation)
-        phraseBox.appendChild(phraseText)
-        phraseBox.appendChild(translationText)
-        phraseBox.style.display = 'block';
-        console.log(phraseBox)
-        main.appendChild(phraseBox)
+        playBoxes.style.backgroundColor = 'lavender'
+        playBoxes.style.textAlign = 'center'
+        playBoxes.style.display = 'block'
+        phraseText.innerText = this.phrase
+        translationText.innerText = this.translation
+    }
+    
+    checkGuess () {
+        if (inputBox.value = this.language) {
+        phraseBox.innerText = "Correct! Nice work!"
+        } else {
+            phraseText.innerText = "Incorrect! Bummer!"
 
+        }
     }
 }
 
 
 const spanish = new Phrase ("\"Mi casa es su casa.\"", "Spanish", "\"My house is your house\"")
 const french = new Phrase ("\"C'est la vie.\"", "French", "\"This is the life\"")
-const italian = new Phrase ()
 
-allPhrases = [spanish, french, ]
+// const italian = new Phrase ()
+// const turkish = new Phrase ()
+// const korean = new Phrase ()
 
-// Game Class
-
-// ===== VARIABLES ===== //
-const instructionsBtn = document.querySelector('#instructions-btn')
-const playBtn = document.querySelector('#play-btn')
-// const welcomeBanner = document.querySelector('#welcome-banner')
-const welcomeWords = document.querySelector('#welcome-words')
-const main = document.querySelector('#main')
-const inputBox = document.querySelector('#input-box')
-const score = document.querySelector('#score')
-const submitBtn = document.querySelector('#submit-btn')
+// allPhrases = [spanish, french, italian, turkish, korean]
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
@@ -74,7 +89,6 @@ instructionsBtn.addEventListener('click', () => {
     // Instructions appear:
     instructionFunction ()
 
-
 })
 
 // PLAY
@@ -90,13 +104,15 @@ playBtn.addEventListener('click', () => {
     // input and submit appears
     inputBox.style.display = 'block';
     submitBtn.style.display = 'block';
+    restartBtn.style.display = 'block';
 
     // function to bring up first phrase
-    console.log(spanish)
     spanish.render()
-    french.render()
 
     // check user input against solution
+    // submitBtn.addEventListener('click', () => {
+    //     spanish.checkGuess()
+    // })
 
     // if correct, ... if not correct ....
     //if checkfunction
