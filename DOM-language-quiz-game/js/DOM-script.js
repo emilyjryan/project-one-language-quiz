@@ -41,8 +41,6 @@ class Phrase {
 
     // Methods:
     render() {
-        main.style.backgroundColor = 'lavender'
-        playBoxes.style.textAlign = 'center'
         playBoxes.style.display = 'block'
         levelBox.innerText = this.level
         phraseText.innerText = this.phrase
@@ -110,8 +108,8 @@ playBtn.addEventListener('click', () => {
     // check user input against solution
     submitBtn.addEventListener('click', () => {
         spanish.checkGuess()
-    })
 
+    })
 
 
 
