@@ -47,10 +47,12 @@ class Phrase {
     }
     
     checkGuess () {
-        if (inputBox.value = this.language) {
-        phraseText.innerText = "Correct! Nice work!"
+        playBoxes.style.display = 'none'
+        resultText.style.display = 'block'
+        if (inputBox.value === this.language) {
+        resultText.innerText = "Correct! Nice work!"
         } else {
-            phraseText.innerText = "Incorrect! Bummer!"
+            resultText.innerText = "Incorrect! Bummer!"
 
         }
     }
@@ -76,10 +78,7 @@ const instructionFunction = function () {
     welcomeWords.innerText = `Here's how to play:`
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!"
-
-    // ========== STILL NEED TO FIX MULTIPLE INSTRUCTION CLICKS ========== //
-}
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess. If you're correct, you'll earn 1 point. Press 'Play' to start!"}
 
 // Instructions button:
 instructionsBtn.addEventListener('click', () => {
@@ -110,10 +109,8 @@ playBtn.addEventListener('click', () => {
         spanish.checkGuess()
     })
 
-    // if correct, ... if not correct ....
-    //if checkfunction
-
     // next level
+    
 
 
 
