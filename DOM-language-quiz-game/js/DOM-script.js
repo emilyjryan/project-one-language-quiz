@@ -17,6 +17,7 @@ const instructionsBox = document.querySelector('#instructions-box')
 const inputBox = document.querySelector('#input-box')
 const submitBtn = document.querySelector('#submit-btn')
 const playBoxes = document.querySelector('#play-boxes')
+const levelBox = document.querySelector('#level-box')
 const phraseText = document.querySelector('#phrase-text')
 const translationText = document.querySelector('#translation-text')
 const resultText = document.querySelector('#result-text')
@@ -31,40 +32,42 @@ class Phrase {
     static phrase = {}
 
     // Constructor:
-    constructor (phrase, language, translation) {
+    constructor (level, phrase, language, translation) {
+        this.level = `Level ${level}:`
         this.phrase = phrase
         this.language = language
-        this.translation = `This means: ${translation} in what language?`
+        this.translation = `This means ${translation} in what language?`
     }
 
     // Methods:
     render() {
-        playBoxes.style.backgroundColor = 'lavender'
+        main.style.backgroundColor = 'lavender'
         playBoxes.style.textAlign = 'center'
         playBoxes.style.display = 'block'
+        levelBox.innerText = this.level
         phraseText.innerText = this.phrase
         translationText.innerText = this.translation
     }
     
     checkGuess () {
-        playBoxes.style.display = 'none'
+        // playBoxes.style.display = 'none'
         resultText.style.display = 'block'
-        if (inputBox.value === this.language) {
-        resultText.innerText = "Correct! Nice work!"
+        if (inputBox.value.toLowerCase() === this.language) {
+        resultText.innerText = "Correct! Nice work! 😎"
+        } else if (inputBox.value === '') {
+        resultText.innerText = "Take a guess!" 
         } else {
-            resultText.innerText = "Incorrect! Bummer!"
-
+            resultText.innerText = "Sorry, that's incorrect. Press 'Next' to move on!"
         }
     }
 }
 
 
-const spanish = new Phrase ("\"Mi casa es su casa.\"", "Spanish", "\"My house is your house\"")
-const french = new Phrase ("\"C'est la vie.\"", "French", "\"This is the life\"")
-
-// const italian = new Phrase ()
-// const turkish = new Phrase ()
-// const korean = new Phrase ()
+const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"")
+const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the life\"")
+const korean = new Phrase ("3", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
+const italian = new Phrase ()
+const turkish = new Phrase ()
 
 // allPhrases = [spanish, french, italian, turkish, korean]
 
@@ -109,21 +112,19 @@ playBtn.addEventListener('click', () => {
         spanish.checkGuess()
     })
 
+
+
+
+
+
     // next level
-    
+
 
 
 
 })
 })
 
-// PLAY
-
-// starts GAME
-// Instructions button disappears
-// Input bar appears
-// Play button disappears
-// Submit button appears
 
 // PHRASES
 
