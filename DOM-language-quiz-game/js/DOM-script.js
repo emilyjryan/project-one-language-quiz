@@ -68,7 +68,7 @@ const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german"
 const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
 const japanese = new Phrase ("5", "\"愛してる(itoshi teru\"", "japanese", "\"i love you\"")
 
-allPhrases = [spanish, french, german, korean, japanese]
+const allPhrases = [spanish, french, german, korean, japanese]
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
@@ -107,51 +107,25 @@ playBtn.addEventListener('click', () => {
     submitBtn.style.display = 'block';
     restartBtn.style.display = 'block';
 
-    if (i = 0; i < )
-    // function to bring up first phrase
-    spanish.render()
-
-    // check user input against solution
-    submitBtn.addEventListener('click', () => {
-        spanish.checkGuess()
-        nextBtn.style.display = 'block'
-    })
-
-nextBtn.addEventListener('click', () => {
-    resultText.style.display = 'none'
-    nextBtn.style.display = 'none'
-    inputBox.innerText = ''
-    french.render()
-
-     submitBtn.addEventListener('click', () => {
-        french.checkGuess()
-        nextBtn.style.display = 'block'
-    })
-})
-
-nextBtn.addEventListener('click', () => {
-    resultText.style.display = 'none'
-    nextBtn.style.display = 'none'
-    inputBox.innerText = ''
-    korean.render()
-
-     submitBtn.addEventListener('click', () => {
-        korean.checkGuess()
-        nextBtn.style.display = 'block'
-    })
-})
 
 
+    for (let i = 0; i < allPhrases.length; i++) {
+        allPhrases[i].render()
 
+        // check user input against solution
+        submitBtn.addEventListener('click', () => {
+            allPhrases[i].checkGuess()
+            nextBtn.style.display = 'block'
+        })
+
+        nextBtn.addEventListener('click', () => {
+            resultText.style.display = 'none'
+            nextBtn.style.display = 'none'
+            inputBox.innerText = ''
+            allPhrases[i+1].render()
+        })
+    }
 
 })
+
 })
-
-
-// PHRASES
-
-// phrases array with key-value pairs
-// 1st phrase from the list is generated on screen
-// input bar with submit button are rendered
-// click event for submit button
-// 
