@@ -12,35 +12,43 @@ class Phrase {
     constructor (phrase, language, translation) {
         this.phrase = phrase
         this.language = language
-        this.translation = translation
+        this.translation = `This means: ${translation} in what language?`
     }
 
     // Methods:
     render() {
         const phraseBox = document.createElement('p')
-        phraseBox.style.backgroundColor = 'purple'
+        phraseBox.style.backgroundColor = 'lavender'
+        phraseBox.style.textAlign = 'center'
         const phraseText = document.createTextNode(this.phrase)
+        const translationText = document.createTextNode(this.translation)
         phraseBox.appendChild(phraseText)
+        phraseBox.appendChild(translationText)
+        phraseBox.style.display = 'block';
+        console.log(phraseBox)
         main.appendChild(phraseBox)
-
-    
 
     }
 }
 
 
-const spanish = new Phrase ("Mi casa es su casa", "Spanish", "My house is your house")
-const french = new Phrase ("C'est la vie", "French", "This is the life")
-const turkish = new Phrase ()
+const spanish = new Phrase ("\"Mi casa es su casa.\"", "Spanish", "\"My house is your house\"")
+const french = new Phrase ("\"C'est la vie.\"", "French", "\"This is the life\"")
+const italian = new Phrase ()
+
+allPhrases = [spanish, french, ]
 
 // Game Class
 
 // ===== VARIABLES ===== //
 const instructionsBtn = document.querySelector('#instructions-btn')
 const playBtn = document.querySelector('#play-btn')
-const welcomeBanner = document.querySelector('#welcome-banner')
+// const welcomeBanner = document.querySelector('#welcome-banner')
 const welcomeWords = document.querySelector('#welcome-words')
 const main = document.querySelector('#main')
+const inputBox = document.querySelector('#input-box')
+const score = document.querySelector('#score')
+const submitBtn = document.querySelector('#submit-btn')
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
@@ -65,7 +73,7 @@ const instructionFunction = function () {
 instructionsBtn.addEventListener('click', () => {
     // Instructions appear:
     instructionFunction ()
-    
+
 
 })
 
@@ -73,20 +81,25 @@ instructionsBtn.addEventListener('click', () => {
 
 //Play button:
 playBtn.addEventListener('click', () => {
-    // somehow resets after instructions is clicked
+    // resets after instructions is clicked
     main.style.backgroundImage = 'none'
     if (main.hasChildNodes = true) {
-    main.removeChild(main.firstChild)
-    }
+    main.removeChild(main.firstChild)}
     welcomeWords.innerText = `Let's go!`
 
     // input and submit appears
+    inputBox.style.display = 'block';
+    submitBtn.style.display = 'block';
 
     // function to bring up first phrase
+    console.log(spanish)
+    spanish.render()
+    french.render()
 
     // check user input against solution
 
     // if correct, ... if not correct ....
+    //if checkfunction
 
     // next level
 

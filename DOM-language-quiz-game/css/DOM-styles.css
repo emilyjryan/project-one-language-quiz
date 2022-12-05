@@ -32,13 +32,13 @@ main {
     grid-gap: 5px;
     grid-template-columns: 3fr 1fr 1fr;
     grid-template-rows: 1fr 8fr 1fr 1fr;
-    grid-template-areas: "welcome-banner welcome-banner top-right"
+    grid-template-areas: "welcome-banner welcome-banner score-banner"
                          "main main main"
                          "instructions-btn instructions-btn play-btn"
-                         "btm-left restart-btn btm-right";
+                         "input-box restart-btn submit-btn";
 }
 
-#welcome-banner, #top-right, #instructions-btn, #restart-btn, #play-btn, #btm-left, #btm-right {
+#welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,18 +54,16 @@ main {
 }
 
 
-#top-right {
-    grid-area: top-right;
+#score-banner {
+    grid-area: score-banner;
 }
 
 #instructions-btn {
     grid-area: instructions-btn;
-    cursor: pointer;
 }
 
 #play-btn {
     grid-area: play-btn;
-    cursor: pointer;
 }
 
 #restart-btn {
@@ -73,16 +71,18 @@ main {
     display: none;
 }
 
-#btm-left {
-    grid-area: btm-left;
+#input-box {
+    grid-area: input-box;
+    background-color: white;
     display: none;
 }
 
-#btm-right {
-    grid-area: btm-right;
+#submit-btn {
+    grid-area: submit-btn;
     display: none;
 }
 
 button {
     border-radius: 30px;
+    cursor: pointer;
 }
