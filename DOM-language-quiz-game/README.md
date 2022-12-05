@@ -37,6 +37,7 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 - Each phrases will be floating down slowly in the canvas and player must type in language before they reach the bottom edge, or else it counts as a loss.
 - Difficulty levels depending on the phrases, with easy, medium, and hard
 - Include a @media query for mobile devices and smaller screens
+- Add audio clips of each phrase
 
 ## Potential roadblocks:
 - Difficulty linking the language phrase with the correct button

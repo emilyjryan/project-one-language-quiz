@@ -6,6 +6,8 @@ console.log('js is linked, yassss')
 
 class Phrase { 
 
+    static phrase = {}
+
     // Constructor:
     constructor (phrase, language, translation) {
         this.phrase = phrase
@@ -21,12 +23,15 @@ class Phrase {
         phraseBox.appendChild(phraseText)
         main.appendChild(phraseBox)
 
+    
+
     }
 }
 
-spanish = new Phrase ("Mi casa es su casa", "Spanish", "My house is your house")
-french = new Phrase ("C'est la vie", "French", "This is the life")
-turkish = new Phrase ()
+
+const spanish = new Phrase ("Mi casa es su casa", "Spanish", "My house is your house")
+const french = new Phrase ("C'est la vie", "French", "This is the life")
+const turkish = new Phrase ()
 
 // Game Class
 
@@ -41,13 +46,10 @@ const main = document.querySelector('#main')
 document.addEventListener("DOMContentLoaded", function() {
     console.log("main.js loaded")
 
-// ===== INSTRUCTIONS ===== //
+// ===== INSTRUCTIONS FUNCTION ===== //
 
-// Instructions button:
-instructionsBtn.addEventListener('click', () => {
-
-    // Instructions appear:
-    welcomeWords.innerText = 'Here is how to play:'
+const instructionFunction = function () {
+    welcomeWords.innerText = `Here's how to play:`
     main.style.backgroundImage = 'none'
     const instructions = document.createElement('p')
     instructions.style.backgroundColor = 'rgb(243, 243, 243)'
@@ -56,8 +58,15 @@ instructionsBtn.addEventListener('click', () => {
     main.appendChild(instructions)
     instructions.style.fontSize = '22px'
     instructions.style.textAlign = 'center'
-
     // ========== STILL NEED TO FIX MULTIPLE INSTRUCTION CLICKS ========== //
+}
+
+// Instructions button:
+instructionsBtn.addEventListener('click', () => {
+    // Instructions appear:
+    instructionFunction ()
+    
+
 })
 
 // PLAY
@@ -66,6 +75,22 @@ instructionsBtn.addEventListener('click', () => {
 playBtn.addEventListener('click', () => {
     // somehow resets after instructions is clicked
     main.style.backgroundImage = 'none'
+    if (main.hasChildNodes = true) {
+    main.removeChild(main.firstChild)
+    }
+    welcomeWords.innerText = `Let's go!`
+
+    // input and submit appears
+
+    // function to bring up first phrase
+
+    // check user input against solution
+
+    // if correct, ... if not correct ....
+
+    // next level
+
+
 
 })
 })
