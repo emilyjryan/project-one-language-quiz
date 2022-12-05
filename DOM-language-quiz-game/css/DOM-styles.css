@@ -35,7 +35,7 @@ main {
     grid-template-areas: "welcome-banner welcome-banner score-banner"
                          "main main main"
                          "instructions-btn instructions-btn play-btn"
-                         "input-box restart-btn submit-btn";
+                         "input-box submit-btn restart-btn";
 }
 
 #welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn {
@@ -60,6 +60,9 @@ main {
 
 #instructions-box {
     display: none;
+    background-color: rgb(243, 243, 243);
+    font-size: 22px;
+    text-align: center;
 }
 
 #instructions-btn {
