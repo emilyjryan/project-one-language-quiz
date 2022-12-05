@@ -64,11 +64,11 @@ class Phrase {
 
 const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"")
 const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the life\"")
-const korean = new Phrase ("3", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
-const italian = new Phrase ()
-const turkish = new Phrase ()
+const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german", "\"nice to meet you\"")
+const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
+const japanese = new Phrase ("5", "\"愛してる(itoshi teru\"", "japanese", "\"i love you\"")
 
-// allPhrases = [spanish, french, italian, turkish, korean]
+allPhrases = [spanish, french, german, korean, japanese]
 
 // DOM CONTENT LOADED
 document.addEventListener("DOMContentLoaded", function() {
@@ -89,7 +89,7 @@ instructionsBtn.addEventListener('click', () => {
 
 })
 
-// PLAY
+// ===== PLAY FUNCTION ===== //
 
 //Play button:
 playBtn.addEventListener('click', () => {
@@ -107,6 +107,7 @@ playBtn.addEventListener('click', () => {
     submitBtn.style.display = 'block';
     restartBtn.style.display = 'block';
 
+    if (i = 0; i < )
     // function to bring up first phrase
     spanish.render()
 
