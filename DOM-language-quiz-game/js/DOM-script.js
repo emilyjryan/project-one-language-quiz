@@ -6,6 +6,7 @@ console.log('js is linked, yassss')
 const instructionsBtn = document.querySelector('#instructions-btn')
 const playBtn = document.querySelector('#play-btn')
 const restartBtn = document.querySelector('#restart-btn')
+const nextBtn = document.querySelector('#next-btn')
 
 // Divs:
 const welcomeWords = document.querySelector('#welcome-words')
@@ -108,6 +109,7 @@ playBtn.addEventListener('click', () => {
     // check user input against solution
     submitBtn.addEventListener('click', () => {
         spanish.checkGuess()
+        nextBtn.style.display = 'block'
 
     })
 

@@ -41,7 +41,7 @@ main {
                          "input-box submit-btn restart-btn";
 }
 
-#welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn {
+#welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn, #next-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,6 +95,13 @@ main {
 
 #result-text {
     display: none;
+}
+
+#next-btn {
+    display: none;
+    margin-left: 45%;
+    padding: 10px;
+    font-weight: 800;
 }
 
 button {
