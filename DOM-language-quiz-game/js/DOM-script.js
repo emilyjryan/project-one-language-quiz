@@ -135,7 +135,7 @@ nextBtn.addEventListener('click', () => {
     } else {
     resultText.style.display = 'none'
     nextBtn.style.display = 'none'
-    inputBox.innerText = ''
+    inputBox.value = ''
     phraseIndex++
     allPhrases[phraseIndex].render()
     }
@@ -149,7 +149,8 @@ playBtn.addEventListener('click', () => {
         allPhrases[phraseIndex].render()
     }
 })
-// RESTART BUTTON
+
+// ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
     phraseIndex = 0
     Phrase.score = 0
@@ -169,5 +170,3 @@ restartBtn.addEventListener('click', () => {
 })
 
 })
-
-// phraseIndex back to 0?
