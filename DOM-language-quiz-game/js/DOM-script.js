@@ -39,7 +39,7 @@ class Phrase {
         this.phrase = phrase
         this.language = language
         this.translation = `This means ${translation} in what language?`
-        this.fact = `Fun fact: ${fact}`
+        this.fact = `(Fun fact: ${fact})`
     }
 
     // Methods:
@@ -71,7 +71,7 @@ class Phrase {
 
 // ===== Phrases List ===== //
 
-const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"", "You might want to go salsa dancing with someone who speaks this language")
+const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"", "You might want to go salsa dancing with someone who speaks this language 🕺🏽💃🏻")
 const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the life\"", "Think baguette, beret, croissant, a giant tower...")
 const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german", "\"nice to meet you\"", "makes me want to wear a lederhosen while eating a snitzel, amiright?")
 const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"", )
@@ -159,6 +159,8 @@ nextBtn.addEventListener('click', () => {
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
+    main.style.backgroundColor = 'var(--oxford-blue)';
+    langStats.style.display = 'none'
     startGame()
     if (phraseIndex === 0) {
         console.log('play button invoked')

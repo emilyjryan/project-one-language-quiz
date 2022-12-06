@@ -27,7 +27,7 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 - User types in correct language that matches phrase --> render 'correct' screen and add 1 point, render 'next' button
 - User types in incorrect language --> render 'incorrect' screen, render 'next' button
 - Game ends after the 5 phrases have been clicked through
-- End screen rendered with ending score, and two buttons for 'try again' and 'instructions'
+- End screen rendered with ending score, and restart button to reset to beginning
 
 
 ## Stretch Goals:

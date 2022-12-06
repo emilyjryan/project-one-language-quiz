@@ -24,13 +24,14 @@ body {
 }
 
 main {
+    background-image: url('../images/welcome-diff-langs.jpeg');
     background-size: contain;
     grid-area: main;
     text-align: center;
-    background-color: var(--oxford-blue);
+    background-color: black;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     border: var(--hunter-green) solid 20px;
 }
@@ -56,6 +57,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--deep-space-sparkle);
+    padding: 15px;
   }
 
 #welcome-banner {
@@ -125,4 +127,12 @@ main {
 button {
     border-radius: 30px;
     cursor: pointer;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#level-box {
+    text-decoration: underline;
 }
