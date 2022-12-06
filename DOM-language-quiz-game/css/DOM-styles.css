@@ -133,6 +133,15 @@ h1 {
     font-size: 50px;
 }
 
+#translation-text {
+    font-size: 35px;
+}
+
 #level-box {
     text-decoration: underline;
+}
+
+#hint-text {
+    font-size: 22px;
+    margin: 30px;
 }
