@@ -254,6 +254,7 @@ restartBtn.addEventListener('click', () => {
     playBoxes.style.display = 'none'
     resultText.style.display = 'none'
     main.style.backgroundImage = "url('../images/welcome-diff-langs.jpeg')";
+    main.style.backgroundColor = 'black';
     inputBox.innerText = ''
     inputBox.style.display = 'none'
     submitBtn.style.display = 'none'

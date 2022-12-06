@@ -111,10 +111,12 @@ main {
 #play-boxes {
     display: none;
     text-align: center;
+    margin: 10px 50px 40px 50px;
 }
 
 #result-text {
     display: none;
+    margin: 10px 50px 40px 50px;
 }
 
 #next-btn {
