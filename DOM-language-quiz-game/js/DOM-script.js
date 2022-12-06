@@ -153,14 +153,15 @@ playBtn.addEventListener('click', () => {
 restartBtn.addEventListener('click', () => {
     phraseIndex = 0
     Phrase.score = 0
-    score.innerText = `Score: ${Phrase.score}`
+    score.innerText = 'Score:'
     console.log(phraseIndex)
     console.log(Phrase.score)
     playBoxes.style.display = 'none'
     resultText.style.display = 'none'
-    // main.style.backgroundImage = "url('../images/languages-around-the-world-1024x710.png');"
+    main.style.backgroundImage = "url('/Users/emilyryan/seir-1114/unit1/project-one/project-one-language-quiz/DOM-language-quiz-game/images/languages-around-the-world-1024x710.png')";
     inputBox.style.display = 'none'
     submitBtn.style.display = 'none'
+    nextBtn.style.display = 'none'
     restartBtn.style.display = 'none'
     instructionsBtn.style.display = 'block'
     playBtn.style.display = 'block'

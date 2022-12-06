@@ -11,7 +11,7 @@ body {
 }
 
 main {
-    background-image: url('../images/languages-around-the-world-1024x710.png');
+    background-image: url('/Users/emilyryan/seir-1114/unit1/project-one/project-one-language-quiz/DOM-language-quiz-game/images/languages-around-the-world-1024x710.png');
     background-size: contain;
     background-color: lavender;
     grid-area: main;
