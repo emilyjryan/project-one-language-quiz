@@ -118,12 +118,14 @@ submitBtn.addEventListener('click', () => {
     console.log('submit button clicked')
     allPhrases[phraseIndex].checkGuess()
     nextBtn.style.display = 'block'
+    score.innerText = `Score: ${Phrase.score}`
 })
 
 // ~ GO TO NEXT PHRASE ON NEXT BUTTON ~ //
 nextBtn.addEventListener('click', () => {
     console.log('next button clicked')
     console.log(phraseIndex)
+    inputBox.innerText = ''
     if (phraseIndex === 4) {
      nextBtn.style.display = 'none'
      playBoxes.style.display = 'none'
@@ -137,18 +139,34 @@ nextBtn.addEventListener('click', () => {
     phraseIndex++
     allPhrases[phraseIndex].render()
     }
-    score.innerText = `Score: ${Phrase.score}`
 })
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
     startGame()
     if (phraseIndex === 0) {
+        console.log('play button invoked')
         allPhrases[phraseIndex].render()
     }
 })
+// RESTART BUTTON
+restartBtn.addEventListener('click', () => {
+    phraseIndex = 0
+    Phrase.score = 0
+    score.innerText = `Score: ${Phrase.score}`
+    console.log(phraseIndex)
+    console.log(Phrase.score)
+    playBoxes.style.display = 'none'
+    resultText.style.display = 'none'
+    // main.style.backgroundImage = "url('../images/languages-around-the-world-1024x710.png');"
+    inputBox.style.display = 'none'
+    submitBtn.style.display = 'none'
+    restartBtn.style.display = 'none'
+    instructionsBtn.style.display = 'block'
+    playBtn.style.display = 'block'
+    welcomeWords.innerText = 'Welcome to Language Quiz!'
+})
 
 })
 
-// RESTART BUTTON
-// phraseIndex back to 0
+// phraseIndex back to 0?
