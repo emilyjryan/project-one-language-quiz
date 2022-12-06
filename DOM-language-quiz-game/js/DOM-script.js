@@ -20,6 +20,7 @@ const inputBox = document.querySelector('#input-box')
 const submitBtn = document.querySelector('#submit-btn')
 const playBoxes = document.querySelector('#play-boxes')
 const levelBox = document.querySelector('#level-box')
+const phraseAudio = document.querySelector('#phrase-audio')
 const phraseText = document.querySelector('#phrase-text')
 const translationText = document.querySelector('#translation-text')
 const hintText = document.querySelector('#hint-text')
@@ -50,9 +51,12 @@ class Phrase {
         phraseText.innerText = this.phrase
         translationText.innerText = this.translation
         hintText.innerText = this.hint
-        
-
     }
+    
+    // audioClip () {
+    //     phraseAudio.addEventListener('click', )
+    //     'https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=es&q='
+    // }
     
     checkGuess () {
         resultText.style.display = 'block'
@@ -67,19 +71,20 @@ class Phrase {
             console.log(Phrase.score)
         }
     }
-
 }
 
 // ===== Phrases List ===== //
 
 const spanish = new Phrase (
     "1", 
-    "\"Mi casa es su casa.\"", 
+    "\"Mi casa es tu casa.\"", 
     "spanish", 
     "\"my house is your house\"", 
     "You might want to go salsa dancing with someone who speaks this language 🕺🏽💃🏻",
     "🇲🇽🇪🇸"
 )
+const spanishAudio = new Audio('../audio-clips/spanish-phrase.mp3')
+// spanishAudio.play()
 
 const french = new Phrase (
     "2", 
@@ -89,10 +94,11 @@ const french = new Phrase (
     "Think berets 👩🏻‍🎨, croissants 🥐, a giant tower...",
     "🇫🇷"
 )
+const frenchAudio = new Audio('../audio-clips/french-phrase.mp3')
 
 const german = new Phrase (
     "3", 
-    "\"Es freut mich Sie kennenzulernen\"", 
+    "\"Freut mich, Sie kennenzulernen\"", 
     "german", 
     "\"nice to meet you\"", 
     "Makes me want to wear a lederhosen while eating a schnitzel, amiright?",
@@ -110,9 +116,9 @@ const korean = new Phrase (
 
 const japanese = new Phrase (
     "5", 
-    "\"愛してる(aishi teru)\"", 
+    "\"友達になろう (tomodachi ni narou)\"", 
     "japanese", 
-    "\"i love you\"",
+    "\"let\'s be friends\"",
     "Land of cherry blossoms 🌸 and allllll the sushi 🍣",
     "🇯🇵"
 )
@@ -121,7 +127,7 @@ const hindi = new Phrase (
     "6", 
     "\"मोसम केसा हे\? (mosam kesa he\?)\"", 
     "hindi", 
-    "\"how is the weather?\"",
+    "\"is the weather nice today?\"",
     "The national symbol of this language's main country is a really big kitty 🐅",
     "🇮🇳"
 )
@@ -161,6 +167,7 @@ const icelandic = new Phrase (
     "🇮🇸"
 )
 
+const allAudios = [spanishAudio, frenchAudio]
 
 const allPhrases = [spanish, french, german, korean, japanese, hindi, swedish, chinese, russian, icelandic]
 
@@ -176,7 +183,7 @@ const instructionFunction = function () {
     langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, type in your best guess and then click 'Submit'. If you guess correctly, you'll earn 1 point. Press 'Play' to start!"}
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Press 'Play' to start!"}
 
 // Instructions button:
 instructionsBtn.addEventListener('click', () => {
@@ -211,6 +218,11 @@ submitBtn.addEventListener('click', () => {
     allPhrases[phraseIndex].checkGuess()
     nextBtn.style.display = 'block'
     score.innerText = `Score: ${Phrase.score}`
+})
+
+// ~ PLAY AUDIO ~ //
+phraseAudio.addEventListener('click', () => {
+    allAudios[phraseIndex].play()
 })
 
 // ~ GO TO NEXT PHRASE ON NEXT BUTTON ~ //

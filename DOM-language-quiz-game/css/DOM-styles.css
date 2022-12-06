@@ -148,3 +148,7 @@ h1 {
     font-size: 25px;
     margin: 30px;
 }
+
+#phrase-audio {
+    cursor: pointer;
+}
