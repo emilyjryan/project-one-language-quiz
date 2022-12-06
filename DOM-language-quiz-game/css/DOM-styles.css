@@ -1,35 +1,45 @@
+:root {
+    --rich-black-fogra-29: #000814ff;
+    --oxford-blue: #001e3dff;
+    --indigo-dye: #003f7aff;
+    --gold-fusion: #7e6f4eff;
+    --deep-space-sparkle: #455f5eff;
+    --space-cadet: #1c1f33ff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
+    color: white;
 }
 
 body {
-    /* background-image: url('../images/490026.webp'); */
+    background-image: url('../images/night-globe-w-black-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 main {
-    background-image: url('/Users/emilyryan/seir-1114/unit1/project-one/project-one-language-quiz/DOM-language-quiz-game/images/languages-around-the-world-1024x710.png');
     background-size: contain;
-    background-color: lavender;
     grid-area: main;
     text-align: center;
-    background-color: rgb(243, 243, 243);
+    background-color: var(--oxford-blue);
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
     width: 100%;
-    border: rgb(219, 186, 110) solid 20px;
-
+    border: var(--hunter-green) solid 20px;
 }
 
 #container {
     display: grid;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 40px;
+    margin-top: 140px;
     height: 70%;
     width: 70%;
     grid-gap: 5px;
@@ -45,7 +55,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(125, 199, 109);
+    background-color: var(--deep-space-sparkle);
   }
 
 #welcome-banner {
@@ -57,10 +67,16 @@ main {
 }
 
 #instructions-box {
-    background-color: rgb(243, 243, 243);
+    background-color: var(--dark-liver);
     display: none;
-    font-size: 22px;
+    font-size: 30px;
     text-align: center;
+}
+
+#lang-stats {
+    display: none;
+    max-width: 75%;
+    margin-left: 12%;
 }
 
 #instructions-btn {
@@ -79,8 +95,9 @@ main {
 #input-box {
     grid-area: input-box;
     background-color: white;
+    color: black;
     display: none;
-    border: black solid 10px;
+    border: var(--indigo-dye) solid 10px;
 }
 
 #submit-btn {
@@ -100,6 +117,7 @@ main {
 #next-btn {
     display: none;
     margin-left: 45%;
+    margin-bottom: 10px;
     padding: 10px;
     font-weight: 800;
 }

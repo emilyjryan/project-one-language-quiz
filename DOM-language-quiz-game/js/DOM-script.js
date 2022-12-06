@@ -14,6 +14,7 @@ const main = document.querySelector('#main')
 const score = document.querySelector('#score')
 
 // Game visuals:
+const langStats = document.querySelector('#lang-stats')
 const instructionsBox = document.querySelector('#instructions-box')
 const inputBox = document.querySelector('#input-box')
 const submitBtn = document.querySelector('#submit-btn')
@@ -21,6 +22,7 @@ const playBoxes = document.querySelector('#play-boxes')
 const levelBox = document.querySelector('#level-box')
 const phraseText = document.querySelector('#phrase-text')
 const translationText = document.querySelector('#translation-text')
+const factText = document.querySelector('#fact-text')
 const resultText = document.querySelector('#result-text')
 
 // ===== DEFINE CLASSES ===== //
@@ -32,11 +34,12 @@ class Phrase {
     static score = 0
 
     // Constructor:
-    constructor (level, phrase, language, translation) {
+    constructor (level, phrase, language, translation, fact) {
         this.level = `Level ${level}:`
         this.phrase = phrase
         this.language = language
         this.translation = `This means ${translation} in what language?`
+        this.fact = `Fun fact: ${fact}`
     }
 
     // Methods:
@@ -45,6 +48,9 @@ class Phrase {
         levelBox.innerText = this.level
         phraseText.innerText = this.phrase
         translationText.innerText = this.translation
+        factText.innerText = this.fact
+        
+
     }
     
     checkGuess () {
@@ -65,10 +71,10 @@ class Phrase {
 
 // ===== Phrases List ===== //
 
-const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"")
-const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the life\"")
-const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german", "\"nice to meet you\"")
-const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
+const spanish = new Phrase ("1", "\"Mi casa es su casa.\"", "spanish", "\"my house is your house\"", "You might want to go salsa dancing with someone who speaks this language")
+const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the life\"", "Think baguette, beret, croissant, a giant tower...")
+const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german", "\"nice to meet you\"", "makes me want to wear a lederhosen while eating a snitzel, amiright?")
+const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"", )
 const japanese = new Phrase ("5", "\"愛してる(aishi teru)\"", "japanese", "\"i love you\"")
 const hindi = new Phrase ("6", "\"मोसम केसा हे\? (mosam kesa he\?)\"", "hindi", "\"how is the weather?\"")
 const swedish = new Phrase ("7", "\"jag är riktigt hungrig!\"", "swedish", "\"i'm really hungry\"")
@@ -91,9 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
 const instructionFunction = function () {
     console.log('instruction function invoked')
     welcomeWords.innerText = `Here's how to play:`
+    langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. When a phrase appears, type in your best guess and then click 'Submit'. If you're correct, you'll earn 1 point. Press 'Play' to start!"}
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a fun fact about each language to help you in your identification. When a phrase appears, type in your best guess and then click 'Submit'. If you guess correctly, you'll earn 1 point. Press 'Play' to start!"}
 
 // Instructions button:
 instructionsBtn.addEventListener('click', () => {
@@ -168,7 +175,7 @@ restartBtn.addEventListener('click', () => {
     console.log(Phrase.score)
     playBoxes.style.display = 'none'
     resultText.style.display = 'none'
-    main.style.backgroundImage = "url('/Users/emilyryan/seir-1114/unit1/project-one/project-one-language-quiz/DOM-language-quiz-game/images/languages-around-the-world-1024x710.png')";
+    main.style.backgroundImage = "url('../images/languages-around-the-world-1024x710.png')";
     inputBox.style.display = 'none'
     submitBtn.style.display = 'none'
     nextBtn.style.display = 'none'
