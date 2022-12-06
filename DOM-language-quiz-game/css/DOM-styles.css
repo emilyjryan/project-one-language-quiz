@@ -71,6 +71,7 @@ main {
 #instructions-box {
     background-color: var(--dark-liver);
     display: none;
+    margin: 40px 50px 40px 50px;
     font-size: 30px;
     text-align: center;
 }
@@ -130,11 +131,11 @@ button {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 #translation-text {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 #level-box {
@@ -142,6 +143,6 @@ h1 {
 }
 
 #hint-text {
-    font-size: 22px;
+    font-size: 25px;
     margin: 30px;
 }
