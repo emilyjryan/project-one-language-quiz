@@ -83,8 +83,7 @@ const spanish = new Phrase (
     "You might want to go salsa dancing with someone who speaks this language 🕺🏽💃🏻",
     "🇲🇽🇪🇸"
 )
-const spanishAudio = new Audio('../audio-clips/spanish-phrase.mp3')
-// spanishAudio.play()
+const spanishAudio = new Audio('../audio-clips/spanish-audio.mp3')
 
 const french = new Phrase (
     "2", 
@@ -94,7 +93,7 @@ const french = new Phrase (
     "Think berets 👩🏻‍🎨, croissants 🥐, a giant tower...",
     "🇫🇷"
 )
-const frenchAudio = new Audio('../audio-clips/french-phrase.mp3')
+const frenchAudio = new Audio('../audio-clips/french-audio.mp3')
 
 const german = new Phrase (
     "3", 
@@ -104,6 +103,7 @@ const german = new Phrase (
     "Makes me want to wear a lederhosen while eating a schnitzel, amiright?",
     "🇩🇪"
 )
+const germanAudio = new Audio('../audio-clips/german-audio.mp3')
 
 const korean = new Phrase (
     "4", 
@@ -113,6 +113,7 @@ const korean = new Phrase (
     "All the members of your fav KPOP band BTS speak this language",
     "🇰🇷"
 )
+const koreanAudio = new Audio('../audio-clips/korean-audio.mp3')
 
 const japanese = new Phrase (
     "5", 
@@ -122,24 +123,27 @@ const japanese = new Phrase (
     "Land of cherry blossoms 🌸 and allllll the sushi 🍣",
     "🇯🇵"
 )
+const japaneseAudio = new Audio('../audio-clips/japanese-audio.mp3')
 
 const hindi = new Phrase (
     "6", 
-    "\"मोसम केसा हे\? (mosam kesa he\?)\"", 
+    "\"क्या आज मौसम अच्छा है\? (kya aaj mausam achchha hai\?)\"", 
     "hindi", 
     "\"is the weather nice today?\"",
     "The national symbol of this language's main country is a really big kitty 🐅",
     "🇮🇳"
 )
+const hindiAudio = new Audio('../audio-clips/hindi-audio.mp3')
 
 const swedish = new Phrase (
     "7", 
-    "\"jag är riktigt hungrig!\"", 
+    "\"jag är väldigt hungrig just nu!\"", 
     "swedish", 
-    "\"i'm very hungry\"",
+    "\"i'm very hungry right now\"",
     "Master this language and you'd be a pro at pronouncing IKEA product names",
     "🇸🇪"
 )
+const swedishAudio = new Audio('../audio-clips/swedish-audio.mp3')
 
 const chinese = new Phrase ("8", 
     "\"你好吗\?(nǐ hǎo ma?)\"", 
@@ -148,6 +152,8 @@ const chinese = new Phrase ("8",
     "Speakers of this language could walk along a super long wall with a GREAT view",
     "🇨🇳"
 )
+const chineseAudio = new Audio('../audio-clips/chinese-audio.mp3')
+
 
 const russian = new Phrase (
     "9", 
@@ -157,6 +163,7 @@ const russian = new Phrase (
     "Is it tsar or czar? I always forget",
     "🇷🇺"
 )
+const russianAudio = new Audio('../audio-clips/russian-audio.mp3')
 
 const icelandic = new Phrase (
     "10", 
@@ -166,8 +173,9 @@ const icelandic = new Phrase (
     "Walter Mitty was truly living his best life skateboarding down those hills",
     "🇮🇸"
 )
+const icelandicAudio = new Audio('../audio-clips/icelandic-audio.mp3')
 
-const allAudios = [spanishAudio, frenchAudio]
+const allAudios = [spanishAudio, frenchAudio, germanAudio, koreanAudio, japaneseAudio, hindiAudio, swedishAudio, chineseAudio, russianAudio, icelandicAudio]
 
 const allPhrases = [spanish, french, german, korean, japanese, hindi, swedish, chinese, russian, icelandic]
 
