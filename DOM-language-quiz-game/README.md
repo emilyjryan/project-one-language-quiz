@@ -19,14 +19,14 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 ![Wireframe](./images/wireframe1201.png)
 
 ## MVP Goals:
-- Render the starting screen with canvas, instruction button, and start button
-- On 'instructions' click, render instruction page with directions in the canvas
-- on 'play' click, render new canvas with 'guess' button
-- Render 1 phrase at a time to appear on the screen, from a fixed list of 10 phrases, with the English translation below
+- Render the starting screen with a main div, instruction button, and start button
+- On 'instructions' click, render instruction page with directions in the main div
+- on 'play' click, render new screen
+- Render 1 phrase at a time to appear on the screen, from a fixed list of 5 phrases, with the English translation below
 - Render a free type input bar with a submit button for user to type in a language and submit their guess.
 - User types in correct language that matches phrase --> render 'correct' screen and add 1 point, render 'next' button
-- User clicks incorrect language --> render 'unlucky' screen and show current score, render 'next' button
-- Game ends after the 10 phrases have been clicked through
+- User types in incorrect language --> render 'incorrect' screen, render 'next' button
+- Game ends after the 5 phrases have been clicked through
 - End screen rendered with ending score, and two buttons for 'try again' and 'instructions'
 
 
