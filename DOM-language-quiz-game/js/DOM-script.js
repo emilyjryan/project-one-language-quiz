@@ -70,8 +70,17 @@ const french = new Phrase ("2", "\"C'est la vie.\"", "french", "\"this is the li
 const german = new Phrase ("3", "\"Es freut mich Sie kennenzulernen\"", "german", "\"nice to meet you\"")
 const korean = new Phrase ("4", "\"감사합니다 (gamsahamnida)\"", "korean", "\"thank you\"")
 const japanese = new Phrase ("5", "\"愛してる(aishi teru)\"", "japanese", "\"i love you\"")
+const hindi = new Phrase ("6", "\"मोसम केसा हे\? (mosam kesa he\?)\"", "hindi", "\"how is the weather?\"")
+const swedish = new Phrase ("7", "\"jag är riktigt hungrig!\"", "swedish", "\"i'm really hungry\"")
+const chinese = new Phrase ("8", "\"你好吗\?(nǐ hǎo ma?)\"", "chinese", "\"how are you\"")
+const russian = new Phrase ("9", "\"я люблю языки (ya lyublyu yazyki)\"", "russian", "\"i love languages\"")
+const icelandic = new Phrase ("10", "\"þetta er síðasta tungumálið\"", "icelandic", "\"this is the last language\"")
 
-const allPhrases = [spanish, french, german, korean, japanese]
+
+
+
+
+const allPhrases = [spanish, french, german, korean, japanese, hindi, swedish, chinese, russian, icelandic]
 
 // ===== DOM CONTENT LOADED ===== //
 document.addEventListener("DOMContentLoaded", function() {
@@ -126,12 +135,12 @@ nextBtn.addEventListener('click', () => {
     console.log('next button clicked')
     console.log(phraseIndex)
     inputBox.innerText = ''
-    if (phraseIndex === 4) {
+    if (phraseIndex === 9) {
      nextBtn.style.display = 'none'
      playBoxes.style.display = 'none'
      inputBox.style.display = 'none'
      submitBtn.style.display = 'none'
-     resultText.innerText = `All done! Your final score is ${Phrase.score}/5 points. Awesome job!`
+     resultText.innerText = `All done! Your final score is ${Phrase.score}/10 points. Awesome job!`
     } else {
     resultText.style.display = 'none'
     nextBtn.style.display = 'none'
