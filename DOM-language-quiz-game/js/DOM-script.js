@@ -120,8 +120,6 @@ submitBtn.addEventListener('click', () => {
     nextBtn.style.display = 'block'
 })
 
-score.innerText = `Score: ${Phrase.score}`
-
 // ~ GO TO NEXT PHRASE ON NEXT BUTTON ~ //
 nextBtn.addEventListener('click', () => {
     console.log('next button clicked')
@@ -129,6 +127,8 @@ nextBtn.addEventListener('click', () => {
     if (phraseIndex === 4) {
      nextBtn.style.display = 'none'
      playBoxes.style.display = 'none'
+     inputBox.style.display = 'none'
+     submitBtn.style.display = 'none'
      resultText.innerText = `All done! Your final score is ${Phrase.score}/5 points. Awesome job!`
     } else {
     resultText.style.display = 'none'
@@ -137,6 +137,7 @@ nextBtn.addEventListener('click', () => {
     phraseIndex++
     allPhrases[phraseIndex].render()
     }
+    score.innerText = `Score: ${Phrase.score}`
 })
 
 // ===== PLAY BUTTON CLICKED ===== //
