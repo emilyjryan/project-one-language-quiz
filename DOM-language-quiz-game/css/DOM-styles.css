@@ -18,6 +18,7 @@
 body {
     background-image: url('../images/night-globe-w-black-background.png');
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: black;
 }
@@ -39,7 +40,7 @@ main {
     display: grid;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 140px;
+    margin-top: 8%;
     margin-bottom: 140px;
     height: 70%;
     width: 70%;
@@ -157,6 +158,92 @@ h1 {
     padding: 0px;
 }
 
-@media only screen and (max-width: 600px) {
-    
+
+/* ===== MEDIA QUERIES ===== */
+
+@media (max-width: 600px) {
+
+* {
+    font-size: 18px;
+}
+
+body {
+    background-image: url('../images/night-globe-w-black-background.png');
+    background-size: 100%;
+    height: 600px;
+    background-position: center center;
+    background-position: bottom;
+}
+
+main {
+    background-image: url('../images/welcome-diff-langs.jpeg');
+    background-size: contain;
+    grid-area: main;
+    text-align: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border: var(--space-cadet) solid 10px;
+}
+
+#container {
+    margin: 5px auto;
+    width: 100%;
+    height: 100%;
+}
+
+#welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn, #next-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--deep-space-sparkle);
+    padding: 0;
+    font-size: 10px;
+
+  }
+
+#next-btn {
+    padding: 10px;
+}
+
+#input-box {
+    font-size: 18px;
+    border: var(--indigo-dye) solid 5px;
+    color: white;
+
+}
+
+#play-boxes {
+    display: none;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#result-text {
+    display: none;
+    margin: 0 auto;
+}
+
+h1, #translation-text {
+    font-size: 20px;
+
+}
+
+#hint-text {
+    font-size: 14px;
+}
+
+#instructions-box {
+    font-size: 18px;
+    margin: 2px;
+}
+
+#lang-stats {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 }
