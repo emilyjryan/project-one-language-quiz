@@ -42,3 +42,16 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 ## Potential roadblocks:
 - Difficulty linking the language phrase with the correct button
 - If going for challenge, difficulty using fetch to generate random phrases with language key value attached
+
+## WORKS CITED
+
+# Images:
+
+- Weston's Canvas Crawler lesson + javascript
+
+- https://earthobservatory.nasa.gov/ContentFeature/NightLights/images/media/BlackMarble_2016_Asia_composite.png (2)
+- https://media.istockphoto.com/id/928810368/vector/welcome-in-different-languages-wordcloud-vector-on-black-background.jpg?s=612x612&w=0&k=20&c=XeZw5CkpfI2pKCw5FpsqExeYxTuEmxW1H4x5M0vO76E= (2)
+- https://i.ytimg.com/vi/sjKeKSOF7SE/maxresdefault.jpg (2)
+
+# Audio Clips:
+- Google translate
