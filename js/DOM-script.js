@@ -304,7 +304,7 @@ nextBtn.addEventListener('click', () => {
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
-    // backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
+    // backgroundMusic = new sound('./audio-clips/acoustic-vibe-124586.mp3')
     // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
     langStats.style.display = 'none'
@@ -328,7 +328,7 @@ restartBtn.addEventListener('click', () => {
     console.log(Phrase.score)
     playBoxes.style.display = 'none'
     resultText.style.display = 'none'
-    main.style.backgroundImage = "url('../images/welcome-diff-langs.jpeg')";
+    main.style.backgroundImage = "url('./images/welcome-diff-langs.jpeg')";
     main.style.backgroundColor = 'black';
     inputBox.innerText = ''
     inputBox.style.display = 'none'
