@@ -84,7 +84,7 @@ const spanish = new Phrase (
     "Makes me feel like salsa dancing 🕺🏽💃🏻",
     "🇲🇽🇪🇸"
 )
-const spanishAudio = new Audio('../audio-clips/spanish-audio.mp3')
+const spanishAudio = new Audio('./audio-clips/spanish-audio.mp3')
 
 const french = new Phrase (
     "2", 
@@ -94,7 +94,7 @@ const french = new Phrase (
     "Think berets 👩🏻‍🎨, croissants 🥐, a giant tower...",
     "🇫🇷"
 )
-const frenchAudio = new Audio('../audio-clips/french-audio.mp3')
+const frenchAudio = new Audio('./audio-clips/french-audio.mp3')
 
 const german = new Phrase (
     "3", 
@@ -104,7 +104,7 @@ const german = new Phrase (
     "Nothing quite like eating a schnitzel while wearing a lederhosen, amiright?",
     "🇩🇪"
 )
-const germanAudio = new Audio('../audio-clips/german-audio.mp3')
+const germanAudio = new Audio('./audio-clips/german-audio.mp3')
 
 const korean = new Phrase (
     "4", 
@@ -114,7 +114,7 @@ const korean = new Phrase (
     "All the members of your fav KPOP band BTS speak this language",
     "🇰🇷"
 )
-const koreanAudio = new Audio('../audio-clips/korean-audio.mp3')
+const koreanAudio = new Audio('./audio-clips/korean-audio.mp3')
 
 const japanese = new Phrase (
     "5", 
@@ -124,7 +124,7 @@ const japanese = new Phrase (
     "Land of cherry blossoms 🌸 and allllll the sushi 🍣",
     "🇯🇵"
 )
-const japaneseAudio = new Audio('../audio-clips/japanese-audio.mp3')
+const japaneseAudio = new Audio('./audio-clips/japanese-audio.mp3')
 
 const hindi = new Phrase (
     "6", 
@@ -134,7 +134,7 @@ const hindi = new Phrase (
     "The national symbol of this language's main country is a really big kitty 🐅",
     "🇮🇳"
 )
-const hindiAudio = new Audio('../audio-clips/hindi-audio.mp3')
+const hindiAudio = new Audio('./audio-clips/hindi-audio.mp3')
 
 const swedish = new Phrase (
     "7", 
@@ -144,7 +144,7 @@ const swedish = new Phrase (
     "Master this language and you'd be a pro at pronouncing IKEA product names",
     "🇸🇪"
 )
-const swedishAudio = new Audio('../audio-clips/swedish-audio.mp3')
+const swedishAudio = new Audio('./audio-clips/swedish-audio.mp3')
 
 const chinese = new Phrase (
     "8", 
@@ -154,7 +154,7 @@ const chinese = new Phrase (
     "Speakers of this language could walk along a super long wall with a GREAT view",
     "🇨🇳"
 )
-const chineseAudio = new Audio('../audio-clips/chinese-audio.mp3')
+const chineseAudio = new Audio('./audio-clips/chinese-audio.mp3')
 
 
 const russian = new Phrase (
@@ -165,7 +165,7 @@ const russian = new Phrase (
     "Is it tsar or czar? I always forget",
     "🇷🇺"
 )
-const russianAudio = new Audio('../audio-clips/russian-audio.mp3')
+const russianAudio = new Audio('./audio-clips/russian-audio.mp3')
 
 const icelandic = new Phrase (
     "10", 
@@ -175,7 +175,7 @@ const icelandic = new Phrase (
     "Walter Mitty was truly living his best life skateboarding down those hills",
     "🇮🇸"
 )
-const icelandicAudio = new Audio('../audio-clips/icelandic-audio.mp3')
+const icelandicAudio = new Audio('./audio-clips/icelandic-audio.mp3')
 
 // ~ Arrays for all audios and all phrases: ~ //
 
@@ -196,7 +196,7 @@ const instructionFunction = function () {
     langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 60 seconds on the clock! Press 'Play' to start!"
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 90 seconds on the clock! Press 'Play' to start!"
 }
 
 // Instructions button clicked:
@@ -208,7 +208,6 @@ instructionsBtn.addEventListener('click', () => {
 // ===== TIMER FUNCTION ===== //
 
 let timer = null
-
 
 const gameTimer = function () {
     console.log('timer tick tock')
@@ -305,8 +304,8 @@ nextBtn.addEventListener('click', () => {
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
-    backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
-    backgroundMusic.play();
+    // backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
+    // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
     langStats.style.display = 'none'
     startGame()
@@ -319,7 +318,7 @@ playBtn.addEventListener('click', () => {
 
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
-    backgroundMusic.stop();
+    // backgroundMusic.stop();
     clearInterval(timerInterval)
     timer = null;
     phraseIndex = 0
