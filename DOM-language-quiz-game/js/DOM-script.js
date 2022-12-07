@@ -320,7 +320,8 @@ playBtn.addEventListener('click', () => {
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
     backgroundMusic.stop();
-    timer = null
+    clearInterval(timerInterval)
+    timer = null;
     phraseIndex = 0
     Phrase.score = 0
     score.innerText = 'Score:'
