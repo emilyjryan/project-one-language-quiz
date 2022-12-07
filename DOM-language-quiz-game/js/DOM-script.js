@@ -101,7 +101,7 @@ const german = new Phrase (
     "\"Freut mich, Sie kennenzulernen\"", 
     "german", 
     "\"nice to meet you\"", 
-    "Makes me want to wear a lederhosen while eating a schnitzel, amiright?",
+    "Nothing quite like eating a schnitzel while wearing a lederhosen, amiright?",
     "🇩🇪"
 )
 const germanAudio = new Audio('../audio-clips/german-audio.mp3')
@@ -146,7 +146,8 @@ const swedish = new Phrase (
 )
 const swedishAudio = new Audio('../audio-clips/swedish-audio.mp3')
 
-const chinese = new Phrase ("8", 
+const chinese = new Phrase (
+    "8", 
     "\"你好吗\?(nǐ hǎo ma?)\"", 
     "chinese", 
     "\"how are you\"",
@@ -212,7 +213,7 @@ let timer = null
 const gameTimer = function () {
     console.log('timer tick tock')
     if(timer === null) {
-        timer = 60
+        timer = 90
     }
     welcomeWords.innerText = `Timer: ${timer}`
     timer--
@@ -304,8 +305,8 @@ nextBtn.addEventListener('click', () => {
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
-    // backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
-    // backgroundMusic.play();
+    backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
+    backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
     langStats.style.display = 'none'
     startGame()
@@ -318,7 +319,7 @@ playBtn.addEventListener('click', () => {
 
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
-    // backgroundMusic.stop();
+    backgroundMusic.stop();
     timer = null
     phraseIndex = 0
     Phrase.score = 0
