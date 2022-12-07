@@ -45,6 +45,8 @@ class Phrase {
     }
 
     // Methods:
+
+    // ~ Render function for each phrase: ~ //
     render() {
         playBoxes.style.display = 'block'
         levelBox.innerText = this.level
@@ -53,11 +55,7 @@ class Phrase {
         hintText.innerText = this.hint
     }
     
-    // audioClip () {
-    //     phraseAudio.addEventListener('click', )
-    //     'https://translate.google.com/translate_tts?ie=UTF-&&client=tw-ob&tl=es&q='
-    // }
-    
+    // ~ Function that compares guess language with correct language: ~ //
     checkGuess () {
         resultText.style.display = 'block'
         if (inputBox.value.toLowerCase() === this.language) {
@@ -83,7 +81,7 @@ const spanish = new Phrase (
     "\"Mi casa es tu casa.\"", 
     "spanish", 
     "\"my house is your house\"", 
-    "You might want to go salsa dancing with someone who speaks this language 🕺🏽💃🏻",
+    "Makes me feel like salsa dancing 🕺🏽💃🏻",
     "🇲🇽🇪🇸"
 )
 const spanishAudio = new Audio('../audio-clips/spanish-audio.mp3')
@@ -178,6 +176,8 @@ const icelandic = new Phrase (
 )
 const icelandicAudio = new Audio('../audio-clips/icelandic-audio.mp3')
 
+// ~ Arrays for all audios and all phrases: ~ //
+
 const allAudios = [spanishAudio, frenchAudio, germanAudio, koreanAudio, japaneseAudio, hindiAudio, swedishAudio, chineseAudio, russianAudio, icelandicAudio]
 
 const allPhrases = [spanish, french, german, korean, japanese, hindi, swedish, chinese, russian, icelandic]
@@ -188,42 +188,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // ===== INSTRUCTIONS FUNCTION ===== //
 
+// Clears main screen and shows instructions and graphic:
 const instructionFunction = function () {
     console.log('instruction function invoked')
     welcomeWords.innerText = `Here's how to play:`
     langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Press 'Play' to start!"}
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 60 seconds on the clock! Press 'Play' to start!"
+}
 
-// Instructions button:
+// Instructions button clicked:
 instructionsBtn.addEventListener('click', () => {
     // Instructions appear:
-    console.log('instruction button clicked')
-    instructionFunction () })
+        instructionFunction () 
+})
+
+// ===== TIMER FUNCTION ===== //
+
+let timer = null
+
+
+const gameTimer = function () {
+    console.log('timer tick tock')
+    if(timer === null) {
+        timer = 60
+    }
+    welcomeWords.innerText = `Timer: ${timer}`
+    timer--
+    if (timer < 0) {
+        nextBtn.style.display = 'none'
+        playBoxes.style.display = 'none'
+        inputBox.style.display = 'none'
+        submitBtn.style.display = 'none'
+        resultText.style.display = 'block'
+        resultText.innerText = `Time's up! Your final score is ${Phrase.score}/10 points. Awesome job!`
+        clearInterval(timerInterval)
+        // console.log(timerInterval)
+    }
+}
+
+let timerInterval
 
 // ===== PLAY FUNCTIONS ===== //
 
 // ~ START GAME ~ //
 const startGame = () => {
-     // resets after instructions is clicked
-     console.log('play button clicked')
+    // resets after instructions is clicked
+    console.log('play button clicked')
      main.style.backgroundImage = 'none'
      instructionsBox.style.display = 'none'
  
      // instructions/play bar disappears:
      instructionsBtn.style.display = 'none'
      playBtn.style.display = 'none'
-     welcomeWords.innerText = `Let's go!`
  
      // input and submit appears
      inputBox.style.display = 'block';
      submitBtn.style.display = 'block';
      restartBtn.style.display = 'block';
 }
-let phraseIndex = 0
 
 // ~ CHECK GUESS ON SUBMIT BUTTON ~ //
+
+let phraseIndex = 0
+
 submitBtn.addEventListener('click', () => {
     console.log('submit button clicked')
     allPhrases[phraseIndex].checkGuess()
@@ -231,7 +260,23 @@ submitBtn.addEventListener('click', () => {
     score.innerText = `Score: ${Phrase.score}`
 })
 
-// ~ PLAY AUDIO ~ //
+// ~ BACKGROUND MUSIC ~ //
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+      this.sound.play();
+    }
+    this.stop = function(){
+      this.sound.pause();
+    }
+  }
+
+// ~ PLAY PHRASE AUDIO CLIPS ~ //
 phraseAudio.addEventListener('click', () => {
     allAudios[phraseIndex].play()
 })
@@ -258,6 +303,8 @@ nextBtn.addEventListener('click', () => {
 
 // ===== PLAY BUTTON CLICKED ===== //
 playBtn.addEventListener('click', () => {
+    // backgroundMusic = new sound('../audio-clips/acoustic-vibe-124586.mp3')
+    // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
     langStats.style.display = 'none'
     startGame()
@@ -265,10 +312,13 @@ playBtn.addEventListener('click', () => {
         console.log('play button invoked')
         allPhrases[phraseIndex].render()
     }
+    timerInterval = setInterval(gameTimer, 1000)
 })
 
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
+    // backgroundMusic.stop();
+    timer = null
     phraseIndex = 0
     Phrase.score = 0
     score.innerText = 'Score:'
