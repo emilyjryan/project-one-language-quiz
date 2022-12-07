@@ -94,7 +94,7 @@ const french = new Phrase (
     "Think berets 👩🏻‍🎨, croissants 🥐, a giant tower...",
     "🇫🇷"
 )
-const frenchAudio = new Audio('./audio-clips/french-audio.mp3')
+const frenchAudio = new Audio('../audio-clips/french-audio.mp3')
 
 const german = new Phrase (
     "3", 
