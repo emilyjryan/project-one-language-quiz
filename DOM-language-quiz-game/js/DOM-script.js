@@ -287,6 +287,7 @@ nextBtn.addEventListener('click', () => {
     console.log(phraseIndex)
     inputBox.innerText = ''
     if (phraseIndex === 9) {
+    clearInterval(timerInterval)
      nextBtn.style.display = 'none'
      playBoxes.style.display = 'none'
      inputBox.style.display = 'none'
