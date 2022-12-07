@@ -61,13 +61,16 @@ class Phrase {
     checkGuess () {
         resultText.style.display = 'block'
         if (inputBox.value.toLowerCase() === this.language) {
-        resultText.innerText = `Correct! The language is ${this.language} ${this.flag}`
+        resultText.innerText = `Correct!
+        The language is ${this.language} ${this.flag}`
         Phrase.score++
         console.log(Phrase.score)
         } else if (inputBox.value === '') {
         resultText.innerText = "Take a guess!" 
         } else {
-            resultText.innerText = `Sorry, that's incorrect. The language is ${this.language} ${this.flag}. Press 'Next' to move on!`
+            resultText.innerText = `Sorry, ${inputBox.value} is incorrect.
+            The correct language is ${this.language} ${this.flag}.
+            Press 'Next' to move on!`
             console.log(Phrase.score)
         }
     }

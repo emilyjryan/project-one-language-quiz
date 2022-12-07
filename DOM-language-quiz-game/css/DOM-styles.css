@@ -4,12 +4,11 @@
     --indigo-dye: #003f7aff;
     --gold-fusion: #7e6f4eff;
     --deep-space-sparkle: #455f5eff;
-    --space-cadet: #1c1f33ff;
+    --space-cadet: rgb(23, 33, 100);
 }
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
@@ -31,9 +30,9 @@ main {
     background-color: black;
     background-repeat: no-repeat;
     background-position: center;
-    /* height: 100%; */
+    height: 100%;
     width: 100%;
-    border: var(--hunter-green) solid 20px;
+    border: var(--space-cadet) solid 20px;
 }
 
 #container {
@@ -41,6 +40,7 @@ main {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 140px;
+    margin-bottom: 140px;
     height: 70%;
     width: 70%;
     grid-gap: 5px;
@@ -57,7 +57,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--deep-space-sparkle);
-    padding: 15px;
+    padding: 10px;
   }
 
 #welcome-banner {
@@ -122,7 +122,7 @@ main {
 #next-btn {
     display: none;
     margin-left: 45%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 10px;
     font-weight: 800;
 }
@@ -131,6 +131,7 @@ button {
     border-radius: 30px;
     cursor: pointer;
 }
+
 
 h1 {
     font-size: 60px;
@@ -151,4 +152,11 @@ h1 {
 
 #phrase-audio {
     cursor: pointer;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    
 }
