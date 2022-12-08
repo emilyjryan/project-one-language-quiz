@@ -296,7 +296,7 @@ submitBtn.addEventListener('click', () => {
 // let hintOn = false
 
 hintBtn.addEventListener('click', () => {
-    hintText.style.display = 'block'
+    hintText.style.display = 'inline-block'
 })
 
 // ~ BACKGROUND MUSIC ~ //
