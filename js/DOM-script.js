@@ -68,7 +68,9 @@ class Phrase {
         Phrase.score++
         console.log(Phrase.score)
         } else if (inputBox.value === '') {
-        resultText.innerText = "Take a guess!" 
+        resultText.innerText = `Take a guess!`
+        nextBtn.innerText = 'IDK, skip this one'
+        nextBtn.style.marginLeft = '33%'
         submitOn = true
         } else {
             resultText.innerText = `Sorry, ${inputBox.value} is incorrect.
