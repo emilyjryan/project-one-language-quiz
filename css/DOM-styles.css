@@ -123,8 +123,9 @@ main {
 
 #next-btn {
     display: none;
-    margin-left: 45%;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    /* margin-left: 45%;
+    margin-bottom: 20px; */
     padding: 10px;
     font-weight: 800;
 }
@@ -151,8 +152,9 @@ h1 {
 }
 
 #hint-btn {
-    margin-left: 37%;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    /* margin-left: 37%;
+    margin-bottom: 20px; */
     padding: 10px;
     font-weight: 800;
 }
