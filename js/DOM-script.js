@@ -208,10 +208,11 @@ let instructionsOn = false
 // Clears main screen and shows instructions and graphic:
 const instructionFunction = function () {
     console.log('instruction function invoked')
-    langStats.style.display = 'block'
+    // langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
     instructionsBox.innerText = `Here's how to play:
+
     There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 2 minutes on the clock! Press 'Play' to start!`
 }
 
@@ -223,7 +224,7 @@ instructionsBtn.addEventListener('click', () => {
         instructionsOn = true
         instructionsBtn.innerText = 'Hide Instructions'
     } else if (instructionsOn === true) {
-    langStats.style.display = 'none'
+    // langStats.style.display = 'none'
     instructionsBox.style.display = 'none'
     instructionsOn = false
     main.style.backgroundImage = "url('./images/welcome-diff-langs.jpeg')";
@@ -340,7 +341,7 @@ playBtn.addEventListener('click', () => {
         // backgroundMusic = new sound('./audio-clips/acoustic-vibe-124586.mp3')
         // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
-    langStats.style.display = 'none'
+    // langStats.style.display = 'none'
     startGame()
     if (phraseIndex === 0) {
         console.log('play button invoked')
