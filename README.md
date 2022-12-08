@@ -1,4 +1,4 @@
-# language-quiz-game
+### Language Quiz Extraordinaire
 
 ## Elevator pitch:
 
@@ -6,7 +6,7 @@
 
 ## About the Game:
 
-This game will involve one phrase at a time popping up on the canvas screen. The player will need to type in the correct language to earn one point. If they are incorrect, they do not receive a point. There will be 10 phrases. Score will be number correct out of 10.
+This game is the perfect opportunity for the polyglot within you to show off and shine. After reading the instructions, the player will press 'Play" and then be shone one phrase at a time. An English translation as well as audio clip speaking the phrase will be available. A hint is also included for each phrase. The player will need to type in the correct language to earn a point. If the guess is incorrect, no point is given. The game is timed, so a player only has 90 seconds to get through as many levels as possible. There will be 10 phrases total. At the end, the player's final score will be displayed as number correct out of 10. There will be an option to press the restart button to start over again from the beginning.
 
 ## Tech stack used:
 
@@ -16,7 +16,8 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 
 ## Wireframe:
 <!-- local image -->
-![Wireframe](./images/wireframe1201.png)
+![First Wireframe](./images/wireframe1201.png)
+![Official Wireframe](./images/ER_Project_One_Wireframe.jpg)
 
 ## MVP Goals:
 - Render the starting screen with a main div, instruction button, and start button
@@ -31,13 +32,12 @@ This game will involve one phrase at a time popping up on the canvas screen. The
 
 
 ## Stretch Goals:
-- Three language options appear with each new phrase for the user to guess from, one is correct and the other two are randomly generated.
-- Add more phrases and incorporate a timer to see how many points a player can get within a specific timeframe
-- Keep track of high scores so player can play against his best score
-- Each phrases will be floating down slowly in the canvas and player must type in language before they reach the bottom edge, or else it counts as a loss.
-- Difficulty levels depending on the phrases, with easy, medium, and hard
+- Add more levels/phrases, perhaps up to 10 or 20.
+- Incorporate a timer to see how many points a player can get within a specific timeframe
 - Include a @media query for mobile devices and smaller screens
 - Add audio clips of each phrase
+- Keep track of high scores so player can play against his best score
+- Add an option to select difficulty level depending on the phrases given, with easy, medium, and hard
 
 ## Potential roadblocks:
 - Difficulty linking the language phrase with the correct button
