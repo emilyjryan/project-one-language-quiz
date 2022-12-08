@@ -22,10 +22,15 @@ Although I'm sure there are countless ways I could have done this type of game, 
 - CSS
 - Javascript
 
-## Wireframe:
+## First Wireframe:
 <!-- local image -->
 ![First Wireframe](./images/wireframe1201.png)
-![Official Wireframe](./images/ER_Project_One_Wireframe.jpg)
+
+---
+
+## Official Wireframe:
+<!-- Miro sketch -->
+![Official Wireframe](./images/miro-frame-project-one.png)
 
 ## MVP Goals:
 - Render the starting screen with a main div, instruction button, and start button
