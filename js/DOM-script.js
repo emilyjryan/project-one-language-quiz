@@ -263,13 +263,17 @@ const startGame = () => {
 // ~ CHECK GUESS ON SUBMIT BUTTON ~ //
 
 let phraseIndex = 0
+let submitOn = true
 
 // submit button clicked:
 submitBtn.addEventListener('click', () => {
-    console.log('submit button clicked')
-    allPhrases[phraseIndex].checkGuess()
-    nextBtn.style.display = 'block'
-    score.innerText = `Score: ${Phrase.score}`
+    if (submitOn === true) {
+        console.log('submit button clicked')
+        allPhrases[phraseIndex].checkGuess()
+        nextBtn.style.display = 'block'
+        score.innerText = `Score: ${Phrase.score}`
+        submitOn = false
+    }
 })
 
 // ~ BACKGROUND MUSIC ~ //
@@ -295,6 +299,7 @@ phraseAudio.addEventListener('click', () => {
 
 // ~ GO TO NEXT PHRASE ON NEXT BUTTON ~ //
 nextBtn.addEventListener('click', () => {
+    submitOn = true
     console.log('next button clicked')
     console.log(phraseIndex)
     inputBox.innerText = ''
