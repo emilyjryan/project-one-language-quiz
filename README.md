@@ -6,7 +6,7 @@
 
 ## About the Game:
 
-This game is the perfect opportunity for the polyglot within you to show off and shine. After reading the instructions, the player will press 'Play" and then be shone one phrase at a time. An English translation as well as audio clip speaking the phrase will be available. A hint is also included for each phrase. The player will need to type in the correct language to earn a point. If the guess is incorrect, no point is given. The game is timed, so a player only has 90 seconds to get through as many levels as possible. There will be 10 phrases total. At the end, the player's final score will be displayed as number correct out of 10. There will be an option to press the restart button to start over again from the beginning.
+This game is the perfect opportunity for the polyglot within you to show off and shine. After reading the instructions, the player will press 'Play" and then be shone one phrase at a time. An English translation as well as audio clip speaking the phrase will be available. A hint is also included for each phrase. The player will need to type in the correct language to earn a point. If the guess is incorrect, no point is given. The game is timed, so a player only has 2 minutes to get through as many levels as possible. There will be 10 phrases total. At the end, the player's final score will be displayed as number correct out of 10. There will be an option to press the restart button to start over again from the beginning.
 
 ## Play the Game:
 https://emilyjryan.github.io/project-one-language-quiz/

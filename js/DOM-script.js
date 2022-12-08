@@ -76,6 +76,7 @@ class Phrase {
 
 // ===== Phrases List ===== //
 
+// SPANISH
 const spanish = new Phrase (
     "1", 
     "\"Mi casa es tu casa.\"", 
@@ -86,6 +87,7 @@ const spanish = new Phrase (
 )
 const spanishAudio = new Audio('./audio-clips/spanish-audio.mp3')
 
+// FRENCH
 const french = new Phrase (
     "2", 
     "\"C'est la vie.\"", 
@@ -96,6 +98,7 @@ const french = new Phrase (
 )
 const frenchAudio = new Audio('./audio-clips/french-audio.mp3')
 
+// GERMAN
 const german = new Phrase (
     "3", 
     "\"Freut mich, Sie kennenzulernen\"", 
@@ -106,6 +109,7 @@ const german = new Phrase (
 )
 const germanAudio = new Audio('./audio-clips/german-audio.mp3')
 
+// KOREAN
 const korean = new Phrase (
     "4", 
     "\"감사합니다 (gamsahamnida)\"", 
@@ -116,6 +120,7 @@ const korean = new Phrase (
 )
 const koreanAudio = new Audio('./audio-clips/korean-audio.mp3')
 
+// JAPANESE
 const japanese = new Phrase (
     "5", 
     "\"友達になろう (tomodachi ni narou)\"", 
@@ -126,6 +131,7 @@ const japanese = new Phrase (
 )
 const japaneseAudio = new Audio('./audio-clips/japanese-audio.mp3')
 
+// HINDI
 const hindi = new Phrase (
     "6", 
     "\"क्या आज मौसम अच्छा है\? (kya aaj mausam achchha hai\?)\"", 
@@ -136,6 +142,7 @@ const hindi = new Phrase (
 )
 const hindiAudio = new Audio('./audio-clips/hindi-audio.mp3')
 
+// SWEDISH
 const swedish = new Phrase (
     "7", 
     "\"jag är väldigt hungrig just nu!\"", 
@@ -146,6 +153,7 @@ const swedish = new Phrase (
 )
 const swedishAudio = new Audio('./audio-clips/swedish-audio.mp3')
 
+// CHINESE
 const chinese = new Phrase (
     "8", 
     "\"你好吗\?(nǐ hǎo ma?)\"", 
@@ -156,7 +164,7 @@ const chinese = new Phrase (
 )
 const chineseAudio = new Audio('./audio-clips/chinese-audio.mp3')
 
-
+// RUSSIAN
 const russian = new Phrase (
     "9", 
     "\"я люблю языки (ya lyublyu yazyki)\"", 
@@ -167,6 +175,7 @@ const russian = new Phrase (
 )
 const russianAudio = new Audio('./audio-clips/russian-audio.mp3')
 
+// ICELANDIC
 const icelandic = new Phrase (
     "10", 
     "\"þetta er síðasta tungumálið\"", 
@@ -177,10 +186,12 @@ const icelandic = new Phrase (
 )
 const icelandicAudio = new Audio('./audio-clips/icelandic-audio.mp3')
 
-// ~ Arrays for all audios and all phrases: ~ //
+// ===== ARRAYS ===== //
 
+// ~ Audio Array ~ //
 const allAudios = [spanishAudio, frenchAudio, germanAudio, koreanAudio, japaneseAudio, hindiAudio, swedishAudio, chineseAudio, russianAudio, icelandicAudio]
 
+// ~ Phrase Array ~ //
 const allPhrases = [spanish, french, german, korean, japanese, hindi, swedish, chinese, russian, icelandic]
 
 // ===== DOM CONTENT LOADED ===== //
@@ -196,7 +207,7 @@ const instructionFunction = function () {
     langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
-    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 90 seconds on the clock! Press 'Play' to start!"
+    instructionsBox.innerText = "There are over 7,000 languages spoken around the globe! Think you could identify some of them? You'll be given phrases from random languages and it's up to you to identify them to earn points. You will also be given a hint about each language to help you in your identification. When a phrase appears, click on the 👂🏼 to hear the audio. Then type in your best guess and click 'Submit'. If you guess correctly, you'll earn 1 point. Make sure to think fast, you only have 2 minutes on the clock! Press 'Play' to start!"
 }
 
 // Instructions button clicked:
@@ -212,7 +223,7 @@ let timer = null
 const gameTimer = function () {
     console.log('timer tick tock')
     if(timer === null) {
-        timer = 90
+        timer = 120
     }
     welcomeWords.innerText = `Timer: ${timer}`
     timer--
@@ -253,6 +264,7 @@ const startGame = () => {
 
 let phraseIndex = 0
 
+// submit button clicked:
 submitBtn.addEventListener('click', () => {
     console.log('submit button clicked')
     allPhrases[phraseIndex].checkGuess()
@@ -303,9 +315,11 @@ nextBtn.addEventListener('click', () => {
 })
 
 // ===== PLAY BUTTON CLICKED ===== //
+
 playBtn.addEventListener('click', () => {
-    // backgroundMusic = new sound('./audio-clips/acoustic-vibe-124586.mp3')
-    // backgroundMusic.play();
+    // optional background music:
+        // backgroundMusic = new sound('./audio-clips/acoustic-vibe-124586.mp3')
+        // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
     langStats.style.display = 'none'
     startGame()
@@ -318,14 +332,14 @@ playBtn.addEventListener('click', () => {
 
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
-    // backgroundMusic.stop();
+        // backgroundMusic.stop();
+    // clear timer:
     clearInterval(timerInterval)
     timer = null;
+    // reset index and score:
     phraseIndex = 0
     Phrase.score = 0
     score.innerText = 'Score:'
-    console.log(phraseIndex)
-    console.log(Phrase.score)
     playBoxes.style.display = 'none'
     resultText.style.display = 'none'
     main.style.backgroundImage = "url('./images/welcome-diff-langs.jpeg')";
