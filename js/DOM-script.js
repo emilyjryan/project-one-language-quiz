@@ -26,6 +26,8 @@ const translationText = document.querySelector('#translation-text')
 const hintText = document.querySelector('#hint-text')
 const resultText = document.querySelector('#result-text')
 
+let submitOn = true
+
 // ===== CLASSES ===== //
 
 // ~ Phrase Class ~ //
@@ -65,6 +67,7 @@ class Phrase {
         console.log(Phrase.score)
         } else if (inputBox.value === '') {
         resultText.innerText = "Take a guess!" 
+        submitOn = true
         } else {
             resultText.innerText = `Sorry, ${inputBox.value} is incorrect.
             The correct language is ${this.language} ${this.flag}.
@@ -263,16 +266,15 @@ const startGame = () => {
 // ~ CHECK GUESS ON SUBMIT BUTTON ~ //
 
 let phraseIndex = 0
-let submitOn = true
 
 // submit button clicked:
 submitBtn.addEventListener('click', () => {
     if (submitOn === true) {
+        submitOn = false
         console.log('submit button clicked')
         allPhrases[phraseIndex].checkGuess()
         nextBtn.style.display = 'block'
         score.innerText = `Score: ${Phrase.score}`
-        submitOn = false
     }
 })
 
