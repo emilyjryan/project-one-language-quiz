@@ -14,7 +14,7 @@ https://emilyjryan.github.io/project-one-language-quiz/
 ## My Approach:
 I first started this game by sketching out a rough wireframe for what I wanted the graphics to look like, including different slides with button clicks. I was originally thinking I might use canvas to render my phrases with each level, but then decided that using DOM with Javascript instead would be more feasible and more conducive to my specific idea. I then created a simple HTML file with all the necessary items to begin the game.
 
-Although I'm sure there are countless ways I could have done this type of game, I ended up adding elements to my HTML doc that I would either display or hide depending on the certain slide/level the player was on. I was able to incorporate audio files into each phrase slide so the user could click the 👂🏼 button and hear the phrase pronounced by a native speaker. 
+Although I'm sure there are countless ways I could have done this type of game, I ended up adding individual block elements to my HTML doc that I would either display or hide depending on the certain slide/level the player was on. I was able to incorporate audio files into each phrase slide so the user could click the 👂🏼 button and hear the phrase pronounced by a native speaker. And I added a timer function that would count down during the game and display a "Time's Up" slide if it ran down to 0 before the 10 questions were answered.
 
 ## Tech stack used:
 
