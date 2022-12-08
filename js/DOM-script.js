@@ -90,7 +90,7 @@ const french = new Phrase (
     "2", 
     "\"C'est la vie.\"", 
     "french", 
-    "\"this is the life\"", 
+    "\"this is life\"", 
     "Think berets 👩🏻‍🎨, croissants 🥐, a giant tower...",
     "🇫🇷"
 )
