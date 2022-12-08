@@ -380,7 +380,7 @@ restartBtn.addEventListener('click', () => {
     restartBtn.style.display = 'none'
     instructionsBtn.style.display = 'block'
     playBtn.style.display = 'block'
-    welcomeWords.innerText = 'Welcome to Language Quiz!'
+    welcomeWords.innerText = '🇩🇪🇰🇷Welcome to Language Quiz!🇸🇳🇧🇷'
 })
 
 })
