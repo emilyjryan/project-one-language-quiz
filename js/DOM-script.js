@@ -26,7 +26,7 @@ const translationText = document.querySelector('#translation-text')
 const hintText = document.querySelector('#hint-text')
 const resultText = document.querySelector('#result-text')
 
-// ===== DEFINE CLASSES ===== //
+// ===== CLASSES ===== //
 
 // ~ Phrase Class ~ //
 
@@ -34,7 +34,7 @@ class Phrase {
 
     static score = 0
 
-    // Constructor:
+    // ~ Constructor: ~ //
     constructor (level, phrase, language, translation, hint, flag) {
         this.level = `LEVEL ${level}:`
         this.phrase = phrase
@@ -44,9 +44,9 @@ class Phrase {
         this.flag = flag
     }
 
-    // Methods:
+    // ===== Methods ===== //
 
-    // ~ Render function for each phrase: ~ //
+    // ~ Render each phrase: ~ //
     render() {
         playBoxes.style.display = 'block'
         levelBox.innerText = this.level
@@ -55,7 +55,7 @@ class Phrase {
         hintText.innerText = this.hint
     }
     
-    // ~ Function that compares guess language with correct language: ~ //
+    // ~ Compare language guess with correct language: ~ //
     checkGuess () {
         resultText.style.display = 'block'
         if (inputBox.value.toLowerCase() === this.language) {
