@@ -23,6 +23,7 @@ const levelBox = document.querySelector('#level-box')
 const phraseAudio = document.querySelector('#phrase-audio')
 const phraseText = document.querySelector('#phrase-text')
 const translationText = document.querySelector('#translation-text')
+const hintBtn = document.querySelector('#hint-btn')
 const hintText = document.querySelector('#hint-text')
 const resultText = document.querySelector('#result-text')
 
@@ -51,6 +52,7 @@ class Phrase {
     // ~ Render each phrase: ~ //
     render() {
         playBoxes.style.display = 'block'
+        hintText.style.display = 'none'
         levelBox.innerText = this.level
         phraseText.innerText = this.phrase
         translationText.innerText = this.translation
@@ -289,6 +291,12 @@ submitBtn.addEventListener('click', () => {
         nextBtn.style.display = 'block'
         score.innerText = `Score: ${Phrase.score}`
     }
+})
+
+// let hintOn = false
+
+hintBtn.addEventListener('click', () => {
+    hintText.style.display = 'block'
 })
 
 // ~ BACKGROUND MUSIC ~ //
