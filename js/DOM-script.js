@@ -288,8 +288,8 @@ submitBtn.addEventListener('click', () => {
     if (submitOn === true) {
         submitOn = false
         console.log('submit button clicked')
-        allPhrases[phraseIndex].checkGuess()
         nextBtn.innerText = "Next"
+        allPhrases[phraseIndex].checkGuess()
         nextBtn.style.display = 'block'
         score.innerText = `Score: ${Phrase.score}`
     }
