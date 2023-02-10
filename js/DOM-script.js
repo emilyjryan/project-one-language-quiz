@@ -61,21 +61,23 @@ class Phrase {
     
     // ~ Compare language guess with correct language: ~ //
     checkGuess () {
+
         resultText.style.display = 'block'
+
         if (inputBox.value.toLowerCase() === this.language) {
-        resultText.innerText = `Correct!
-        The language is ${this.language} ${this.flag}`
-        Phrase.score++
-        console.log(Phrase.score)
-        } else if (inputBox.value === '') {
-        resultText.innerText = `Take a guess!`
-        nextBtn.innerText = 'IDK, skip this one'
-        submitOn = true
+            resultText.innerText = `Correct!
+            The language is ${this.language} ${this.flag}`
+            Phrase.score++
+            
+         } else if (inputBox.value === '') {
+            resultText.innerText = `Take a guess!`
+            nextBtn.innerText = 'IDK, skip this one'
+            submitOn = true
+
         } else {
             resultText.innerText = `Sorry, ${inputBox.value} is incorrect.
             The correct language is ${this.language} ${this.flag}.
             Press 'Next' to move on!`
-            console.log(Phrase.score)
         }
     }
 }
@@ -210,8 +212,6 @@ let instructionsOn = false
 
 // Clears main screen and shows instructions and graphic:
 const instructionFunction = function () {
-    console.log('instruction function invoked')
-    // langStats.style.display = 'block'
     instructionsBox.style.display = 'block'
     main.style.backgroundImage = 'none'
     instructionsBox.innerText = `Here's how to play:
@@ -227,11 +227,10 @@ instructionsBtn.addEventListener('click', () => {
         instructionsOn = true
         instructionsBtn.innerText = 'Hide Instructions'
     } else if (instructionsOn === true) {
-    // langStats.style.display = 'none'
-    instructionsBox.style.display = 'none'
-    instructionsOn = false
-    main.style.backgroundImage = "url('./images/welcome-diff-langs.jpeg')";
-    instructionsBtn.innerText = 'Show Instructions'
+        instructionsBox.style.display = 'none'
+        instructionsOn = false
+        main.style.backgroundImage = "url('./images/welcome-diff-langs.jpeg')";
+        instructionsBtn.innerText = 'Show Instructions'
     } 
 })
 
@@ -240,7 +239,6 @@ instructionsBtn.addEventListener('click', () => {
 let timer = null
 
 const gameTimer = function () {
-    console.log('timer tick tock')
     if(timer === null) {
         timer = 120
     }
@@ -254,7 +252,6 @@ const gameTimer = function () {
         resultText.style.display = 'block'
         resultText.innerText = `Time's up! Your final score is ${Phrase.score}/10 points. Awesome job!`
         clearInterval(timerInterval)
-        // console.log(timerInterval)
     }
 }
 
@@ -265,7 +262,6 @@ let timerInterval
 // ~ START GAME ~ //
 const startGame = () => {
     // resets after instructions is clicked
-    console.log('play button clicked')
      main.style.backgroundImage = 'none'
      instructionsBox.style.display = 'none'
  
@@ -287,7 +283,6 @@ let phraseIndex = 0
 submitBtn.addEventListener('click', () => {
     if (submitOn === true) {
         submitOn = false
-        console.log('submit button clicked')
         nextBtn.innerText = "Next"
         allPhrases[phraseIndex].checkGuess()
         nextBtn.style.display = 'block'
@@ -325,8 +320,6 @@ phraseAudio.addEventListener('click', () => {
 // ~ GO TO NEXT PHRASE ON NEXT BUTTON ~ //
 nextBtn.addEventListener('click', () => {
     submitOn = true
-    console.log('next button clicked')
-    console.log(phraseIndex)
     inputBox.innerText = ''
     if (phraseIndex === 9) {
     clearInterval(timerInterval)
@@ -351,10 +344,8 @@ playBtn.addEventListener('click', () => {
         // backgroundMusic = new sound('./audio-clips/acoustic-vibe-124586.mp3')
         // backgroundMusic.play();
     main.style.backgroundColor = 'var(--oxford-blue)';
-    // langStats.style.display = 'none'
     startGame()
     if (phraseIndex === 0) {
-        console.log('play button invoked')
         allPhrases[phraseIndex].render()
     }
     timerInterval = setInterval(gameTimer, 1000)
@@ -363,6 +354,7 @@ playBtn.addEventListener('click', () => {
 // ===== RESTART BUTTON ===== //
 restartBtn.addEventListener('click', () => {
         // backgroundMusic.stop();
+        
     // clear timer:
     clearInterval(timerInterval)
     timer = null;

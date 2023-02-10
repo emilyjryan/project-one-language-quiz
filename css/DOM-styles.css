@@ -17,7 +17,8 @@
 
 body {
     background-image: url('../images/night-globe-w-black-background.png');
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: black;
@@ -27,6 +28,7 @@ main {
     background-image: url('../images/welcome-diff-langs.jpeg');
     background-size: contain;
     grid-area: main;
+    border-radius: 10px;
     text-align: center;
     background-color: black;
     background-repeat: no-repeat;
@@ -40,8 +42,7 @@ main {
     display: grid;
     margin-left: 25%;
     margin-right: 25%;
-    margin-top: 8%;
-    margin-bottom: 140px;
+    margin-top: 6%;
     height: 50%;
     width: 50%;
     grid-gap: 5px;
@@ -55,6 +56,7 @@ main {
 
 #welcome-banner, #score-banner, #instructions-btn, #restart-btn, #play-btn, #input-box, #submit-btn, #next-btn, #hint-btn {
     display: flex;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     background-color: var(--deep-space-sparkle);
