@@ -13,7 +13,7 @@ const welcomeWords = document.querySelector('#welcome-words')
 const main = document.querySelector('#main')
 const score = document.querySelector('#score')
 
-// Game visuals:
+// Game Visuals:
 const langStats = document.querySelector('#lang-stats')
 const instructionsBox = document.querySelector('#instructions-box')
 const inputBox = document.querySelector('#input-box')
@@ -289,8 +289,6 @@ submitBtn.addEventListener('click', () => {
         score.innerText = `Score: ${Phrase.score}`
     }
 })
-
-// let hintOn = false
 
 hintBtn.addEventListener('click', () => {
     hintText.style.display = 'block'
